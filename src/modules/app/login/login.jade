@@ -1,0 +1,10 @@
+form
+    div.list
+        label.item.item-input.item-stacked-label
+            span.input-label Username
+            input(ng-model="user.username" type="text" placeholder="Please enter your username...")
+        label.item.item-input.item-stacked-label
+            span.input-label Password
+            input(ng-model="user.password" type="password" placeholder="Please enter your password...")        
+
+        button.button.button-positive.button-block(ng-click="login()") Login

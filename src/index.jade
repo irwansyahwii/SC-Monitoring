@@ -1,0 +1,21 @@
+doctype
+html(ng-app="dea")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width")
+        title
+        link(href="assets/ionic/css/ionic.css" rel="stylesheet")
+        script(src="assets/ionic/js/ionic.bundle.js")
+            
+        //- alertify css
+        link(href="assets/alertify/css/alertify.min.css" rel="stylesheet")
+        link(href="assets/alertify/css/themes/default.min.css" rel="stylesheet")
+        script(src="assets/alertify/alertify.min.js")
+        //- cordova script (this will be a 404 during development)
+        script(src="cordova.js")
+        <!--scripts-->
+    body
+        //- ion-nav-bar(class="bar-positive")
+        //-     ion-nav-back-button
+        div(ui-view="")
+        //- ion-nav-view
