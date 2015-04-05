@@ -17,13 +17,15 @@
     }
 
     User.prototype.login = function() {
-      var result;
-      result = false;
-      this.log.debug("User.login() executing...");
-      this.log.debug("username: " + this.username + ", password: " + this.password);
-      this.log.debug("User.login() END");
-      result = false;
-      return result;
+      var deferred;
+      deferred = this.q.defer();
+      this.timeout((function(_this) {
+        return function() {
+          _this.log.debug("deferred.resolve()");
+          return deferred.resolve(true);
+        };
+      })(this), 1);
+      return deferred.promise;
     };
 
     return User;

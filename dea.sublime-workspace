@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"de",
+				"deferred"
+			],
+			[
+				"main",
+				"main_screen"
+			],
+			[
+				"s",
+				"stateProvider"
+			],
+			[
 				"pre",
 				"presenter"
 			],
@@ -46,10 +58,6 @@
 			[
 				"des",
 				"description"
-			],
-			[
-				"de",
-				"destination_asset"
 			],
 			[
 				"inco",
@@ -420,9 +428,29 @@
 	"buffers":
 	[
 	],
-	"build_system": "",
+	"build_system": "Packages/IcedCoffeeScript/Commands/IcedCoffeeScript.sublime-build",
 	"build_system_choices":
 	[
+		[
+			[
+				[
+					"Packages/IcedCoffeeScript/Commands/IcedCoffeeScript.sublime-build",
+					""
+				],
+				[
+					"Packages/Kulture/ASP.NET.sublime-build",
+					""
+				],
+				[
+					"Packages/User/coffeescript.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/IcedCoffeeScript/Commands/IcedCoffeeScript.sublime-build",
+				""
+			]
+		],
 		[
 			[
 				[
@@ -459,10 +487,22 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "in",
+		"height": 107.0,
+		"last_filter": "Package Control: in",
 		"selected_items":
 		[
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
 			[
 				"in",
 				"Package Control: Install Package"
@@ -494,10 +534,6 @@
 			[
 				"angu",
 				"AngularJS: Look Up Definition"
-			],
-			[
-				"Package Control: in",
-				"Package Control: Install Package"
 			]
 		],
 		"width": 530.0
@@ -521,10 +557,25 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/irwansyah/Documents/PROJECTS/angular/dea"
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/mobile",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/mobile/www",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/mobile/www/templates",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/assets",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/login",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/main_screen"
 	],
 	"file_history":
 	[
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/main_screen/main_for_manager.jade",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/services/routing_service.coffee",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/domain_models/user.coffee",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/login/login_controller.coffee",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/main_screen/index.coffee",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/README.md",
 		"/Users/irwansyah/Documents/PROJECTS/angular/myApp/Tstest/Tstest.sublime-project",
 		"/Users/irwansyah/Documents/PROJECTS/angular/myApp/Tstest/root.ts",
 		"/Users/irwansyah/Documents/PROJECTS/angular/myApp/Tstest/tsconfig.json",
@@ -646,13 +697,7 @@
 		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/src/modules/app/income/income.html",
 		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/src/modules/app/index.coffee",
 		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/src/index.html",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/src/modules/app/main-screen/main-screen.html",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/gulp/tasks/index.js",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/gulp/lib/taskTree.js",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/karma/node_modules/source-map/test/source-map/test-array-set.js",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/browserify/test/tr_args.js",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/gulp-jshint/node_modules/jshint/node_modules/htmlparser2/test/Documents/Atom_Example.xml",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/test.coffee"
+		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/src/modules/app/main-screen/main-screen.html"
 	],
 	"find":
 	{
@@ -771,7 +816,7 @@
 	{
 		"height": 100.0
 	},
-	"pinned_build_system": "Packages/User/typescript.sublime-build",
+	"pinned_build_system": "",
 	"project": "dea.sublime-project",
 	"replace":
 	{
@@ -784,6 +829,18 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"loginco",
+				"src/modules/app/login/login_controller.coffee"
+			],
+			[
+				"use",
+				"src/modules/common/domain_models/user.coffee"
+			],
+			[
+				"rou",
+				"src/modules/common/services/routing_service.coffee"
+			],
 			[
 				"secre",
 				"backend/config/secrets.yml"
@@ -963,10 +1020,6 @@
 			[
 				"node-",
 				"ui-new/src/node-webkit-package.json"
-			],
-			[
-				"rou",
-				"ui-new/src/modules/common/services/RoutingService.coffee"
 			],
 			[
 				"routingse",

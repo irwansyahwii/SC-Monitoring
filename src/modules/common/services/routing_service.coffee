@@ -9,6 +9,6 @@ class RoutingService
     constructor:(@state) ->
 
     gotoMainScreen: ->
-        @state.go("main")
+        @state.go("main_for_manager")
 
 module.exports = RoutingService

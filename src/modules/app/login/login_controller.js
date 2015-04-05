@@ -7,27 +7,28 @@
 
   LoginController = (function() {
     LoginController.factory = [
-      "$scope", "$log", "RoutingService", function($scope, $log, RoutingService) {
+      "$scope", "$log", "RoutingService", "$q", "$timeout", function($scope, $log, RoutingService, $q, $timeout) {
         var controller;
-        controller = new LoginController($scope, $log, RoutingService);
+        controller = new LoginController($scope, $log, RoutingService, $q, $timeout);
         return controller;
       }
     ];
 
-    function LoginController(scope, log, RoutingService1) {
+    function LoginController(scope, log, RoutingService1, q, timeout) {
       this.scope = scope;
       this.log = log;
       this.RoutingService = RoutingService1;
-      this.scope.user = new User(this.log);
+      this.q = q;
+      this.timeout = timeout;
+      this.scope.user = new User(this.log, this.q, this.timeout);
       this.scope.login = (function(_this) {
         return function() {
           _this.log.debug("scope.login executing...");
-          if (_this.scope.user.login()) {
-            _this.scope.user.fetch;
-            _this.RoutingService.gotoMainScreen();
-          } else {
-            _this.displayError(_this.scope.user.errors);
-          }
+          _this.scope.user.login().then(function(login_result) {
+            return _this.RoutingService.gotoMainScreen();
+          })["catch"](function(error) {
+            return _this.displayError(_this.scope.user.errors);
+          });
           return _this.log.debug("scope.login END");
         };
       })(this);

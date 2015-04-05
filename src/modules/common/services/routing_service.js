@@ -16,7 +16,7 @@
     }
 
     RoutingService.prototype.gotoMainScreen = function() {
-      return this.state.go("main");
+      return this.state.go("main_for_manager");
     };
 
     return RoutingService;

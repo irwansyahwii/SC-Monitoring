@@ -4,7 +4,8 @@ app_module = angular.module("dea", [
         'ionic',
         require('../../../tmp/templates').name,
         require('../common').name,    
-        require("./login").name
+        require("./login").name,
+        require("./main_screen").name
     ])
 
 app_runner = require("./run_with_ionic")

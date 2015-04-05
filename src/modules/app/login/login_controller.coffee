@@ -5,24 +5,31 @@
 User = require("User")
 
 class LoginController
-    @factory:["$scope", "$log", "RoutingService", ($scope, $log, RoutingService) ->
-        controller = new LoginController($scope, $log, RoutingService)
+    @factory:["$scope", "$log", "RoutingService", "$q", "$timeout", 
+        ($scope, $log, RoutingService, $q, $timeout) ->
+            controller = new LoginController($scope, $log, RoutingService, $q, $timeout)
 
-        controller
+            controller
     ]
 
-    constructor: (@scope, @log, @RoutingService) ->
+    constructor: (@scope, @log, @RoutingService, @q, @timeout) ->
 
-        @scope.user = new User(@log)
+        @scope.user = new User(@log, @q, @timeout)
 
         @scope.login = () =>
             @log.debug("scope.login executing...")
 
-            if @scope.user.login()
-                @scope.user.fetch
-                @RoutingService.gotoMainScreen()
-            else
-                @displayError(@scope.user.errors)
+            @scope.user.login()
+                .then (login_result) =>
+                    @RoutingService.gotoMainScreen()
+                .catch (error) =>
+                    @displayError(@scope.user.errors)  
+
+            # if @scope.user.login()
+            #     @scope.user.fetch
+            #     @RoutingService.gotoMainScreen()
+            # else
+            #     @displayError(@scope.user.errors)
 
 
             @log.debug("scope.login END")

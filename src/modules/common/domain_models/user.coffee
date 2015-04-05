@@ -8,21 +8,14 @@ class User
 
     login: () =>
 
-        # deferred = @q.defer()
+        deferred = @q.defer()
 
-        # @timeout(()->
-        #         deferred.resolve()
-        #     , 1)
-        result = false
-        @log.debug("User.login() executing...")
+        @timeout(() =>
+                @log.debug("deferred.resolve()")
+                deferred.resolve(true)
+            , 1)
 
-        @log.debug("username: #{@username}, password: #{@password}")
-
-        @log.debug("User.login() END")
-
-        result = false
-
-        result
+        deferred.promise
 
 
 module.exports = User

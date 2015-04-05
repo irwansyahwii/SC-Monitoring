@@ -2,7 +2,7 @@
 (function() {
   var app_config, app_module, app_runner;
 
-  app_module = angular.module("dea", ['ui.bootstrap', 'ui.router', 'ionic', require('../../../tmp/templates').name, require('../common').name, require("./login").name]);
+  app_module = angular.module("dea", ['ui.bootstrap', 'ui.router', 'ionic', require('../../../tmp/templates').name, require('../common').name, require("./login").name, require("./main_screen").name]);
 
   app_runner = require("./run_with_ionic");
 
