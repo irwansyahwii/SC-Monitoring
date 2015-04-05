@@ -4,19 +4,31 @@
 
   RoutingService = (function() {
     RoutingService.factory = [
-      "$state", function($state) {
+      "$state", "$log", function($state, $log) {
         var service;
-        service = new RoutingService($state);
+        service = new RoutingService($state, $log);
         return service;
       }
     ];
 
-    function RoutingService(state) {
+    function RoutingService(state, log) {
       this.state = state;
+      this.log = log;
     }
 
     RoutingService.prototype.gotoMainScreen = function() {
+      this.log.debug("RoutingService.gotoMainScreen() executing...");
       return this.state.go("main_for_manager");
+    };
+
+    RoutingService.prototype.gotoListOfNewSCScreen = function() {
+      this.log.debug("RoutingService.gotoListOfNewSCScreen() executing...");
+      return this.state.go("main_for_manager.tab_new_view");
+    };
+
+    RoutingService.prototype.gotoListOfPaymentStatusScreen = function() {
+      this.log.debug("RoutingService.gotoListOfPaymentStatusScreen() executing...");
+      return this.state.go("main_for_manager.tab_payment_status_view");
     };
 
     return RoutingService;
