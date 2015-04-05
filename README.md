@@ -1,2 +1,2 @@
 # SC-Monitoring
-Angular + Firebase SC Monitoring Application
+Angular + Ionic + Firebase SC Monitoring Application
