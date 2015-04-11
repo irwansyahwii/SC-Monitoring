@@ -1,13 +1,14 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 var User = require("../../common/domain_models/user");
 var LoginController = (function () {
-    function LoginController($scope, $log, RoutingService, $q, $timeout) {
+    function LoginController($scope, $log, RoutingService, $q, $timeout, LoginService) {
         var _this = this;
         this.$log = $log;
-        $scope.user = new User($log, $q, $timeout);
+        $scope.user = new User($log, $q, $timeout, LoginService);
         $scope.login = function () {
             $log.debug("scope.login executing...");
             $scope.user.login().then(function (login_result) {
+                RoutingService.gotoMainScreen();
             }).catch(function (error) {
                 _this.displayError($scope.user);
             });
@@ -21,8 +22,9 @@ var LoginController = (function () {
                 "RoutingService",
                 "$q",
                 "$timeout",
-                function ($scope, $log, RoutingService, $q, $timeout) {
-                    var controller = new LoginController($scope, $log, RoutingService, $q, $timeout);
+                "LoginService",
+                function ($scope, $log, RoutingService, $q, $timeout, LoginService) {
+                    var controller = new LoginController($scope, $log, RoutingService, $q, $timeout, LoginService);
                     return controller;
                 }
             ];

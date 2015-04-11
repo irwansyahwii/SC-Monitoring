@@ -1,13 +1,14 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 var FieldError = require("../services/FieldError");
 var User = (function () {
-    function User($log, $q, $timeout) {
+    function User($log, $q, $timeout, LoginService) {
         this._username = "";
         this._password = "";
         this._errors = new Array();
         this.$log = $log;
         this.$q = $q;
         this.$timeout = $timeout;
+        this.LoginService = LoginService;
     }
     Object.defineProperty(User.prototype, "username", {
         get: function () {
@@ -43,9 +44,14 @@ var User = (function () {
         var _this = this;
         var deferred = this.$q.defer();
         this.clearErrors();
+        this.$log.debug("admin: %s, password: %s", this.username, this.password);
         this.$timeout(function () {
             if (_this.username == "admin" && _this.password == "admin") {
-                _this.$log.debug("deferred.resolve()");
+                _this.$log.debug("admin, deferred.resolve()");
+                deferred.resolve(true);
+            }
+            else if (_this.username == "manager" && _this.password == "manager") {
+                _this.$log.debug("manager, deferred.resolve()");
                 deferred.resolve(true);
             }
             else {
