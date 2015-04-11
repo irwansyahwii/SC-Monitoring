@@ -37,6 +37,20 @@ var UserDataInitializer = (function () {
         result.push(sc);
         return result;
     };
+    UserDataInitializer.prototype.create_list_of_approved_sc = function () {
+        var result = new Array();
+        var sc = new SC();
+        sc.sc_number = "123456501";
+        sc.project_name = "Renewal Sewa Genset 2014";
+        sc.created_date = "23/3/2015";
+        result.push(sc);
+        sc = new SC();
+        sc.sc_number = "123456502";
+        sc.project_name = "Renewal Sewa Radio 2013";
+        sc.created_date = "8/4/2015";
+        result.push(sc);
+        return result;
+    };
     UserDataInitializer.prototype.retrieve_user_data = function (username) {
         var _this = this;
         var deferred = this.$q.defer();
@@ -49,6 +63,7 @@ var UserDataInitializer = (function () {
                 result.roles = ["admin"];
             }
             result.list_of_new_sc = _this.create_list_of_new_sc();
+            result.list_of_approved_sc = _this.create_list_of_approved_sc();
             deferred.resolve(result);
         }, 1);
         return deferred.promise;

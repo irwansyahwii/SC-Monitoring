@@ -52,6 +52,27 @@ class UserDataInitializer implements IUserDataInitializer{
         return result;
     }
 
+    create_list_of_approved_sc() : SC[] {
+        var result: SC[] = new Array<SC>();
+
+        var sc:SC = new SC();
+        sc.sc_number = "123456501";
+        sc.project_name = "Renewal Sewa Genset 2014"
+        sc.created_date = "23/3/2015";
+
+        result.push(sc);
+
+
+        sc = new SC();
+        sc.sc_number = "123456502";
+        sc.project_name = "Renewal Sewa Radio 2013"
+        sc.created_date = "8/4/2015";
+
+        result.push(sc);
+
+        return result;
+    }
+
     retrieve_user_data(username: string):ng.IPromise<UserDataResult> {
         var deferred = this.$q.defer();
 
@@ -67,6 +88,7 @@ class UserDataInitializer implements IUserDataInitializer{
                     result.roles = ["admin"];
                 }
                 result.list_of_new_sc = this.create_list_of_new_sc();
+                result.list_of_approved_sc = this.create_list_of_approved_sc();
 
                 deferred.resolve(result);
             }, 1);        
