@@ -1,1 +1,13 @@
-|list_of_payment_status_sc_for_manager.coffee
+ion-view(view-title="Dashboard")
+    ion-content.padding
+        div.button-bar
+            div.button(ng-class="{'button-dark': selected_button_bar_id === 'approved'}" ng-click="button_bar_clicked('approved')") Approved
+            div.button(ng-class="{'button-dark': selected_button_bar_id === 'po'}" ng-click="button_bar_clicked('po')") PO
+            div.button(ng-class="{'button-dark': selected_button_bar_id === 'gr'}" ng-click="button_bar_clicked('gr')") GR
+        div(ui-view="list_view")
+        //- ion-list
+        //-     ion-item.item-icon-right(ng-repeat="sc in current_user.data.list_of_new_sc | orderBy:'+created_date'")
+        //-         div {{sc.sc_number}}
+        //-         div {{sc.project_name}}
+        //-         div {{to_moment(sc.created_date)}}
+        //-         i.icon.ion-chevron-right

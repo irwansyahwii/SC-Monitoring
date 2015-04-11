@@ -6,26 +6,27 @@ var MainForManagerController = (function () {
         this.$scope = $scope;
         this.RoutingService = RoutingService;
         this.$log = $log;
-        this.$log.debug("test moment - DD/MM/YYYY:");
-        this.$log.debug(moment("23/03/2015", "DD/MM/YYYY").fromNow());
         this.$scope.current_user = User.current_user;
-        this.$log.debug("this.$scope.current_user:");
-        this.$log.debug(this.$scope.current_user);
-        this.$scope.to_moment = function (dt) {
-            _this.$log.debug("filter called");
-            _this.$log.debug(moment(dt, "DD/MM/YYYY").fromNow());
-            var result = moment(dt, "DD/MM/YYYY").fromNow();
-            _this.$log.debug("filter result: ", result);
-            return result;
+        this.$scope.show_detail_sc = function (sc) {
+            _this.$log.debug("show_detail_sc called");
+            _this.$scope.selected_sc = sc;
+            RoutingService.showDetailSC(sc);
         };
-        this.$scope.item_clicked = function () {
-            alert("adasd");
+        this.$scope.selected_button_bar_id = "approved";
+        this.$scope.button_bar_clicked = function (button_id) {
+            _this.$scope.selected_button_bar_id = button_id;
+            RoutingService.showListView(_this.$scope.selected_button_bar_id);
+        };
+        this.$scope.to_moment = function (dt) {
+            var result = moment(dt, "DD/MM/YYYY").fromNow();
+            return result;
         };
         this.$scope.on_tab_new_selected = function () {
             _this.RoutingService.gotoListOfNewSCScreen();
         };
         this.$scope.on_tab_payment_status_selected = function () {
             _this.RoutingService.gotoListOfPaymentStatusScreen();
+            _this.$scope.button_bar_clicked("approved");
         };
     }
     Object.defineProperty(MainForManagerController, "factory", {

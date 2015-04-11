@@ -43,6 +43,23 @@ class RoutingService {
         this.$log.debug("RoutingService.gotoListOfPaymentStatusScreen() executing...");
         this.$state.go("main_for_manager.tab_payment_status_view");
     }
+
+    showListView(button_bar_id) {
+        this.$log.debug("RoutingService.showListView() button_bar_id:", button_bar_id);
+        if(button_bar_id === "approved"){
+            this.$state.go("main_for_manager.tab_payment_status_view.approved");
+        }
+        else if(button_bar_id === "po"){
+            this.$state.go("main_for_manager.tab_payment_status_view.po");
+        }
+        else if(button_bar_id === "gr"){
+            this.$state.go("main_for_manager.tab_payment_status_view.gr");
+        }
+    }
+
+    showDetailSC( sc){
+        this.$state.go("main_for_manager.show_detail_sc");
+    }
 }
 
 export = RoutingService;

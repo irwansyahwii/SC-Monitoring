@@ -1,1 +1,11 @@
-list_of_payment_status_sc_for_manager.coffee
+
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+    <div class="button-bar">
+      <div ng-class="{'button-dark': selected_button_bar_id === 'approved'}" ng-click="button_bar_clicked('approved')" class="button">Approved</div>
+      <div ng-class="{'button-dark': selected_button_bar_id === 'po'}" ng-click="button_bar_clicked('po')" class="button">PO</div>
+      <div ng-class="{'button-dark': selected_button_bar_id === 'gr'}" ng-click="button_bar_clicked('gr')" class="button">GR</div>
+    </div>
+    <div ui-view="list_view"></div>
+  </ion-content>
+</ion-view>

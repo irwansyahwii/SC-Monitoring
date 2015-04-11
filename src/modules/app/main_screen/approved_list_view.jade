@@ -1,0 +1,6 @@
+ion-list
+    ion-item.item-icon-right(ng-repeat="sc in current_user.data.list_of_approved_sc | orderBy:'+created_date'")
+        div {{sc.sc_number}}
+        div {{sc.project_name}}
+        div {{to_moment(sc.created_date)}}
+        i.icon.ion-chevron-right

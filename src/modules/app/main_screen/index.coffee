@@ -14,12 +14,30 @@ the_module.config(["$stateProvider",
             $stateProvider.state "main_for_manager.tab_new_view",
                 views:
                     "tab_new_view":
-                        templateUrl: "app/main_screen/list_of_new_sc_for_manager.html"        
+                        templateUrl: "app/main_screen/list_of_new_sc_for_manager.html"   
+
+            $stateProvider.state "main_for_manager.show_detail_sc",
+                views:
+                    "tab_new_view":
+                        templateUrl: "app/main_screen/show_detail_sc.html"   
+
             $stateProvider.state "main_for_manager.tab_payment_status_view",
                 views:
                     "tab_payment_status_view":
                         templateUrl: "app/main_screen/list_of_payment_status_sc_for_manager.html"        
 
+            $stateProvider.state "main_for_manager.tab_payment_status_view.approved",
+                views:
+                    "list_view":
+                        templateUrl: "app/main_screen/approved_list_view.html"        
+            $stateProvider.state "main_for_manager.tab_payment_status_view.po",
+                views:
+                    "list_view":
+                        templateUrl: "app/main_screen/po_list_view.html"        
+            $stateProvider.state "main_for_manager.tab_payment_status_view.gr",
+                views:
+                    "list_view":
+                        templateUrl: "app/main_screen/gr_list_view.html"        
     ])
 
 main_for_manager_controller = require("./main_for_manager_controller")

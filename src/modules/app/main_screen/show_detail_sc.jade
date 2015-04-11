@@ -1,0 +1,10 @@
+| show_detail_sc.jade
+
+ion-view(view-title="Dashboard")
+    ion-content.padding
+        ion-list
+            ion-item.item-icon-right
+                div {{selected_sc.sc_number}}
+                div {{selected_sc.project_name}}
+                div {{to_moment(selected_sc.created_date)}}
+                i.icon.ion-chevron-right

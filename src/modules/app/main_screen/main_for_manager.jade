@@ -5,14 +5,14 @@ ion-header-bar.bar-positive
 
 ion-tabs.tabs-icon-top.tabs-positive
 
-  ion-tab(on-select="on_tab_new_selected()" title="New" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong")
+  ion-tab(on-select="on_tab_new_selected()" title="New" icon-off="ion-ios-filing" icon-on="ion-ios-filing-outline")
     ion-nav-view(name="tab-new")
-    div(ui-view="tab_new_view")        
+    ion-view(ui-view="tab_new_view")        
   
 
-  ion-tab(on-select="on_tab_payment_status_selected()" title="Payment Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong")
+  ion-tab(on-select="on_tab_payment_status_selected()" title="Payment Status" icon-off="ion-ios-box" icon-on="ion-ios-box-outline")
     ion-nav-view(name="tab-payment-status")
     div(ui-view="tab_payment_status_view")
 
-  ion-tab(title="Rejected" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong")
+  ion-tab(title="Rejected" icon-off="ion-ios-analytics" icon-on="ion-ios-analytics-outline")
     ion-nav-view(name="tab-rejected")
