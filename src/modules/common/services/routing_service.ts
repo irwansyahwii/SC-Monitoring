@@ -1,5 +1,7 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 
+import User = require("../domain_models/User");
+
 class RoutingService {
     static get factory() : any[] {
         var result = ["$state", "$log", 
@@ -22,7 +24,15 @@ class RoutingService {
 
     gotoMainScreen() {
         this.$log.debug("RoutingService.gotoMainScreen() executing...");
-        this.$state.go("main_for_manager");
+        this.$log.debug(User.current_user);
+        this.$log.debug("User.current_user.roles[0]: ", User.current_user.roles[0]);
+        if (User.current_user.roles[0] === "manager"){
+            this.$state.go("main_for_manager");    
+        }
+        else{
+            alert("No main screen yet");
+        }
+        
     }
 
     gotoListOfNewSCScreen() {
@@ -35,4 +45,4 @@ class RoutingService {
     }
 }
 
-module.exports = RoutingService
+export = RoutingService;

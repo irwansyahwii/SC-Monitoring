@@ -4,6 +4,7 @@ import LoginResult = require("LoginResult");
 
 interface ILoginService {
     login(username:string, password:string) : ng.IPromise<any>;
+    logout():ng.IPromise<any>;
 }
 
 export = ILoginService;

@@ -1,5 +1,7 @@
 ion-view(view-title="Dashboard")
     ion-content.padding
         ion-list
-            ion-item
-                | hello2
+            ion-item(ng-repeat="sc in current_user.data.list_of_new_sc | orderBy:'+created_date'")
+                div {{sc.sc_number}}
+                div {{sc.project_name}}
+                div {{to_moment(sc.created_date)}}

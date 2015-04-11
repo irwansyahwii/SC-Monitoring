@@ -8,6 +8,9 @@ class MainForManagerController
     ]
 
     constructor: (@scope, @RoutingService, @log) ->
+        @scope.item_clicked = =>
+            alert("adasd")
+            
         @scope.on_tab_new_selected = =>
             @RoutingService.gotoListOfNewSCScreen()
 

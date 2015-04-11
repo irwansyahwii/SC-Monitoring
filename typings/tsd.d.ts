@@ -5,3 +5,4 @@
 /// <reference path="alertify/alertify.d.ts" />
 /// <reference path="angular-agility/angular-agility.d.ts" />
 /// <reference path="angular-ui-router/angular-ui-router.d.ts" />
+/// <reference path="moment/moment.d.ts" />

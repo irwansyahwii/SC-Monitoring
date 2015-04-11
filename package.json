@@ -35,7 +35,8 @@
     "angular-ui-bootstrap": "./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js",
     "angular-ui-router": "./bower_components/angular-ui-router/release/angular-ui-router.min.js",
     "User": "./src/modules/common/domain_models/user.js",
-    "alertify": "./node_modules/alertifyjs/build/alertify.min.js"
+    "alertify": "./node_modules/alertifyjs/build/alertify.min.js",
+    "momentjs": "./bower_components/momentjs/moment.js"
   },
   "browserify-shim": {}
 }

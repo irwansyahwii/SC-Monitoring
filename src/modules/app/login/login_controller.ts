@@ -1,7 +1,9 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 
-import User = require("../../common/domain_models/user")
-import ILoginService = require("../../common/services/ILoginService")
+import User = require("../../common/domain_models/user");
+import ILoginService = require("../../common/services/ILoginService");
+import IUserDataInitializer = require("../../common/services/IUserDataInitializer");
+
 
 declare var alertify:any;
 
@@ -15,12 +17,13 @@ class LoginController{
 
     static get factory() : any[] {
         var arr: any[] = [
-            "$scope", "$log", "RoutingService", "$q", "$timeout", "LoginService",
+            "$scope", "$log", "RoutingService", "$q", "$timeout", "LoginService", "UserDataInitializerService",
             ($scope: LoginControllerScope, $log: ng.ILogService, RoutingService:any, 
-                $q: ng.IQService, $timeout: ng.ITimeoutService, LoginService: ILoginService) => {
+                $q: ng.IQService, $timeout: ng.ITimeoutService, LoginService: ILoginService,
+                UserDataInitializer: IUserDataInitializer) => {
 
                 var controller:LoginController = new LoginController($scope, $log, RoutingService, $q, $timeout
-                    , LoginService);
+                    , LoginService, UserDataInitializer);
 
                 return controller;
             }
@@ -29,11 +32,12 @@ class LoginController{
     }
 
     constructor($scope: LoginControllerScope, $log: ng.ILogService, RoutingService:any, 
-        $q: ng.IQService, $timeout: ng.ITimeoutService, LoginService: ILoginService) {
+        $q: ng.IQService, $timeout: ng.ITimeoutService, LoginService: ILoginService,
+        UserDataInitializer: IUserDataInitializer) {
 
         this.$log = $log;
 
-        $scope.user = new User($log, $q, $timeout, LoginService);
+        $scope.user = new User($log, $q, $timeout, LoginService, UserDataInitializer);
         $scope.login = () => {
             $log.debug("scope.login executing...");
 
