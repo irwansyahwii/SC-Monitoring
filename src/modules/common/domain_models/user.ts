@@ -2,6 +2,7 @@
 
 import FieldError = require("../services/FieldError")
 import ILoginService = require("../services/ILoginService")
+import LoginResult = require("../services/LoginResult")
 
 class User{
     private $log: ng.ILogService;
@@ -49,24 +50,16 @@ class User{
 
         this.clearErrors();
 
-        this.$log.debug("admin: %s, password: %s", this.username, this.password);
+        this.$log.debug("User entry: admin: %s, password: %s", this.username, this.password);
 
-        this.$timeout(() => {
-                if(this.username == "admin" && this.password == "admin") {
-                    this.$log.debug("admin, deferred.resolve()");
-                    deferred.resolve(true);                    
-                }
-                else if(this.username == "manager" && this.password == "manager") {
-                    this.$log.debug("manager, deferred.resolve()");
-                    deferred.resolve(true);                    
-                }
-                else{
-                    var error:FieldError = new FieldError("username", "Invalid user name or password");
-                    this._errors.push(error);
-
-                    deferred.reject(false);
-                }
-            }, 1);
+        this.LoginService.login(this.username, this.password)
+            .then((login_result:LoginResult) => {
+                    deferred.resolve();
+                })
+            .catch((login_result: LoginResult) => {
+                    this._errors = login_result.errors;
+                    deferred.reject();
+                });
 
         return deferred.promise;
 

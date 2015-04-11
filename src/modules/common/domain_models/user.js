@@ -1,5 +1,4 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
-var FieldError = require("../services/FieldError");
 var User = (function () {
     function User($log, $q, $timeout, LoginService) {
         this._username = "";
@@ -44,22 +43,13 @@ var User = (function () {
         var _this = this;
         var deferred = this.$q.defer();
         this.clearErrors();
-        this.$log.debug("admin: %s, password: %s", this.username, this.password);
-        this.$timeout(function () {
-            if (_this.username == "admin" && _this.password == "admin") {
-                _this.$log.debug("admin, deferred.resolve()");
-                deferred.resolve(true);
-            }
-            else if (_this.username == "manager" && _this.password == "manager") {
-                _this.$log.debug("manager, deferred.resolve()");
-                deferred.resolve(true);
-            }
-            else {
-                var error = new FieldError("username", "Invalid user name or password");
-                _this._errors.push(error);
-                deferred.reject(false);
-            }
-        }, 1);
+        this.$log.debug("User entry: admin: %s, password: %s", this.username, this.password);
+        this.LoginService.login(this.username, this.password).then(function (login_result) {
+            deferred.resolve();
+        }).catch(function (login_result) {
+            _this._errors = login_result.errors;
+            deferred.reject();
+        });
         return deferred.promise;
     };
     return User;
