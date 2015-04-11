@@ -17,5 +17,8 @@ class User
 
         deferred.promise
 
+    fetchRoles: () =>
+        
+
 
 module.exports = User
