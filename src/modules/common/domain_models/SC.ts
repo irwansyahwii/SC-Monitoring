@@ -8,6 +8,8 @@ class SC{
     pm_name : string = "";
     currency : string = "";
     sc_value: number = 0;
+    quantity: number = 0;
+    created_date: string;
     cost_center: string = "";
     gl_account: string = "";
     business_area: string = "";
@@ -17,8 +19,7 @@ class SC{
     rejected_date: string = "";
     rejected_message: string = "";    
     POInfo : SCPOInfo = new SCPOInfo();
-    GRInfo : SCGRInfo = new SCGRInfo();
-    created_date: string;
+    GRInfo : SCGRInfo = new SCGRInfo();    
 }
 
 export = SC;

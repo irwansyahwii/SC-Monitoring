@@ -1,9 +1,11 @@
+User = require("../common/domain_models/user");
+
 class Run
-    @factory:["$ionicPlatform", "$log", ($ionicPlatform, $log) ->
-        run = new Run($ionicPlatform, $log)
+    @factory:["$ionicPlatform", "$log", "$state", ($ionicPlatform, $log, $state) ->
+        run = new Run($ionicPlatform, $log, $state)
         run.execute()
     ]
-    constructor:(@ionicPlatform, @log) ->
+    constructor:(@ionicPlatform, @log, @state) ->
 
     execute: ->
         @log.debug("run_with_ionic executing...")
@@ -14,6 +16,9 @@ class Run
                 if(window.StatusBar)
                     window.StatusBar.styleDefault()
             )
+
+        if User.current_user is null
+            @state.go("login")
 
         @log.debug("run_with_ionic END")
                 

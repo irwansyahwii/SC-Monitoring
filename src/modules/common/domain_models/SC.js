@@ -8,6 +8,7 @@ var SC = (function () {
         this.pm_name = "";
         this.currency = "";
         this.sc_value = 0;
+        this.quantity = 0;
         this.cost_center = "";
         this.gl_account = "";
         this.business_area = "";

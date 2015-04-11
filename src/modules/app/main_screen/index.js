@@ -6,6 +6,7 @@
 
   the_module.config([
     "$stateProvider", function($stateProvider) {
+      console.log("main_screen/index.coffee");
       $stateProvider.state("main_for_manager", {
         url: "/main",
         templateUrl: "app/main_screen/main_for_manager.html",
