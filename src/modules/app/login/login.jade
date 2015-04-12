@@ -1,11 +1,16 @@
-form
-    div.list        
-        label.item.item-input.item-stacked-label
-            span.input-label Username
-            input(ng-model="user.username" type="text" placeholder="Please enter your username...")
-        label.item.item-input.item-stacked-label
-            span.input-label Password
-            input(ng-model="user.password" type="password" placeholder="Please enter your password...")        
+ion-header-bar.bar-positive
+    //- button.button.icon.ion-navicon
+    h1.title Monitoring SC
+    //- button.button.icon.ion-plus
+ion-content
+    form
+        div.list        
+            label.item.item-input.item-stacked-label
+                span.input-label Username
+                input(ng-model="user.username" type="text" placeholder="Please enter your username...")
+            label.item.item-input.item-stacked-label
+                span.input-label Password
+                input(ng-model="user.password" type="password" placeholder="Please enter your password...")        
 
-        div.item
-            button.button.button-block.button-positive(ng-click="login()") Login
+            div.item
+                button.button.button-block.button-positive(ng-click="login()") Login

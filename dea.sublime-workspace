@@ -4,12 +4,136 @@
 		"selected_items":
 		[
 			[
-				"de",
+				"side",
+				"ionicSideMenuDelegate"
+			],
+			[
+				"cre",
+				"create_list_of_approved_sc"
+			],
+			[
+				"show",
+				"show_detail_sc"
+			],
+			[
+				"sc",
+				"scope"
+			],
+			[
+				"bu",
+				"button_id"
+			],
+			[
+				"butt",
+				"button_bar_clicked"
+			],
+			[
+				"go",
+				"gotoListOfPaymentStatusScreen"
+			],
+			[
+				"on",
+				"on_tab_payment_status_selected"
+			],
+			[
+				"USer",
+				"UserDataResult"
+			],
+			[
+				"Use",
+				"User"
+			],
+			[
+				"USe",
+				"UserDataResult"
+			],
+			[
+				"Log",
+				"LoginService"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"User",
+				"UserDataResult"
+			],
+			[
+				"re",
+				"result"
+			],
+			[
+				"im",
+				"import"
+			],
+			[
+				"SC",
+				"SCGRInfo"
+			],
+			[
+				"Sta",
+				"SCStatus"
+			],
+			[
+				"IL",
+				"ILogService"
+			],
+			[
+				"res",
+				"result"
+			],
+			[
+				"log",
+				"login_result"
+			],
+			[
+				"Lo",
+				"LoginResult"
+			],
+			[
+				"got",
+				"gotoListOfNewSCScreen"
+			],
+			[
+				"ILo",
+				"ILoginService"
+			],
+			[
+				"error",
+				"errors"
+			],
+			[
+				"er",
+				"err"
+			],
+			[
+				"Login",
+				"LoginControllerScope"
+			],
+			[
+				"con",
+				"controller"
+			],
+			[
+				"_",
+				"_error_message"
+			],
+			[
+				"def",
 				"deferred"
 			],
 			[
+				"sta",
+				"state"
+			],
+			[
 				"main",
-				"main_screen"
+				"main_for_manager"
+			],
+			[
+				"de",
+				"deferred"
 			],
 			[
 				"s",
@@ -42,10 +166,6 @@
 			[
 				"tota",
 				"total_expenses"
-			],
-			[
-				"bu",
-				"budget"
 			],
 			[
 				"lat",
@@ -82,14 +202,6 @@
 			[
 				"se",
 				"segment"
-			],
-			[
-				"log",
-				"log	log"
-			],
-			[
-				"con",
-				"container"
 			],
 			[
 				"login",
@@ -300,10 +412,6 @@
 				"push"
 			],
 			[
-				"sta",
-				"satuans"
-			],
-			[
 				"jua",
 				"jutaan"
 			],
@@ -406,31 +514,35 @@
 			[
 				"fire",
 				"firebaseRef"
-			],
-			[
-				"zer",
-				"zeroCourse"
-			],
-			[
-				"cou",
-				"courses"
-			],
-			[
-				"error",
-				"errorMessage"
-			],
-			[
-				"templ",
-				"templateUrl"
 			]
 		]
 	},
 	"buffers":
 	[
 	],
-	"build_system": "Packages/IcedCoffeeScript/Commands/IcedCoffeeScript.sublime-build",
+	"build_system": "Packages/User/typescript.sublime-build",
 	"build_system_choices":
 	[
+		[
+			[
+				[
+					"Packages/Better CoffeeScript/CoffeeScript.sublime-build",
+					""
+				],
+				[
+					"Packages/Better CoffeeScript/CoffeeScript.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/coffeescript.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/coffeescript.sublime-build",
+				""
+			]
+		],
 		[
 			[
 				[
@@ -482,22 +594,38 @@
 				"Packages/User/typescript-build.sublime-build",
 				""
 			]
+		],
+		[
+			[
+				[
+					"Packages/User/typescript-build.sublime-build",
+					""
+				],
+				[
+					"Packages/User/typescript.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/typescript.sublime-build",
+				""
+			]
 		]
 	],
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 107.0,
-		"last_filter": "Package Control: in",
+		"height": 87.0,
+		"last_filter": "Package Control: remo",
 		"selected_items":
 		[
 			[
-				"Package Control: in",
-				"Package Control: Install Package"
-			],
-			[
 				"Package Control: remo",
 				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
 			],
 			[
 				"remo",
@@ -536,7 +664,7 @@
 				"AngularJS: Look Up Definition"
 			]
 		],
-		"width": 530.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -558,23 +686,74 @@
 	"expanded_folders":
 	[
 		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/bower_components",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/bower_components/momentjs",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/bower_components/momentjs/min",
 		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/mobile",
 		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/mobile/www",
-		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/mobile/www/templates",
 		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src",
 		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/assets",
 		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules",
 		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app",
 		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/login",
-		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/main_screen"
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/main_screen",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/typings",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/typings/angularjs",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/typings/moment"
 	],
 	"file_history":
 	[
-		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/main_screen/main_for_manager.jade",
-		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/services/routing_service.coffee",
-		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/domain_models/user.coffee",
-		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/login/login_controller.coffee",
 		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/main_screen/index.coffee",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/index.jade",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/main_screen/list_of_new_sc_for_manager.jade",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/main_screen/main_for_manager_controller.js",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/main_screen/main_for_manager_controller.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/main_screen/show_detail_sc.jade",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/services/user_data_initializer_dummy.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/main_screen/main_for_manager.jade",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/login/login.jade",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/services/routing_service.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/main_screen/list_of_payment_status_sc_for_manager.html",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/services/UserDataResult.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/main_screen/gr_list_view.jade",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/main_screen/po_list_view.jade",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/main_screen/approved_list_view.jade",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/main_screen/list_of_payment_status_sc_for_manager.jade",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/domain_models/user.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/run_with_ionic.coffee",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/login/login.html",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/index.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/main_screen/list_of_new_sc_for_manager.html",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/domain_models/SC.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/main_screen/main_for_manager.html",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/index.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/package.json",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/main_screen/main_for_manager_controller.coffee",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/login/login_controller.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/domain_models/user.js",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/build/bundle.js",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/services/ILoginService.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/services/IUserDataInitializer.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/services/index.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/domain_models/SCStatus.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/domain_models/SCPOInfo.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/domain_models/SCGRInfo.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/services/login_service_dummy.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/typings/angular-ui-router/angular-ui-router.d.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/typings/angularjs/angular.d.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/typings/tsd.d.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/login/login_controller.coffee",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/login/index.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/login/login_controller.js",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/domain_models/user.coffee",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/services/FieldError.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/services/LoginResult.ts",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/services/LoginResult.js",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/services/index.coffee",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/services/login_service_dummy.js",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/common/services/routing_service.coffee",
+		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules/app/index.coffee",
 		"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/README.md",
 		"/Users/irwansyah/Documents/PROJECTS/angular/myApp/Tstest/Tstest.sublime-project",
 		"/Users/irwansyah/Documents/PROJECTS/angular/myApp/Tstest/root.ts",
@@ -652,62 +831,19 @@
 		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/bower_components/md-date-time/src/main.coffee",
 		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/watchify/test/many_immediate.js",
 		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/backend/app/views/articles/new.html.slim",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/active-x-obfuscator/node_modules/zeparser/tests.js",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/active-x-obfuscator/node_modules/zeparser/.gitignore",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/bower_components/angular-ui-router/src/viewDirective.js",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/active-x-obfuscator/test.js",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/browserify-shim/node_modules/rename-function-calls/node_modules/detective/test/yield.js",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/karma-browserify/node_modules/browserify/node_modules/module-deps/node_modules/detective/node_modules/escodegen/node_modules/optionator/lib/parse-type.js",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/browserify-shim/node_modules/rename-function-calls/node_modules/detective/.travis.yml",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/backend/config/initializers/simple_form.rb",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/sinon/pkg/sinon-ie.js",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/backend/app/models/presenters/login_presenter.rb",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/mockup/Login.bmml",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/yargs/example/line_count_options.js",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/app.coffee",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/brfs/test/files/ag_post.html",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/yargs/example/requires_arg.js",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/chai/lib/chai/utils/getMessage.js",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/backend/config.ru",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/cucumber/features/cucumber-tck/command_line_options.feature",
-		"/Users/irwansyah/Library/Application Support/Sublime Text 3/Packages/User/slim.sublime-build",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/gulp-minify-html/node_modules/minimize/node_modules/cli-color/node_modules/memoizee/lib/configure-map.js",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/karma/node_modules/http-proxy/config.sample.json",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/mockup/Create-Family.bmml",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/chai/lib/chai/utils/getEnumerableProperties.js",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/backend/app/assets/stylesheets/articles.scss",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/backend/app/assets/javascripts/articles.coffee",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/bower_components/angular-ui-router/release/angular-ui-router.js",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/backend/app/controllers/welcome_controller.rb",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/backend/app/assets/stylesheets/welcome.scss",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/backend/app/assets/javascripts/welcome.coffee",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/browserify/node_modules/syntax-error/node_modules/acorn/bin/without_eval",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/.bin/watchify",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/src/modules/app/expense/ExpenseController.coffee",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/src/modules/app/budget/BudgetController.coffee",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/src/modules/app/budget/budget.jade",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/src/modules/app/expense/expense.jade",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/src/modules/app/expense/expense.html",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/src/modules/app/income/income-strap.jade",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/src/modules/app/main-screen/main-screen.jade",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/src/modules/app/income/Config.coffee",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/src/modules/app/main-screen/main-screen-controller.coffee",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/src/modules/app/income/accordion.html",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/src/modules/app/income/income.jade",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/src/modules/app/income/income.html",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/src/modules/app/index.coffee",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/src/index.html",
-		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/src/modules/app/main-screen/main-screen.html"
+		"/Users/irwansyah/Documents/PROJECTS/Ruby/myfamily/frontend/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/active-x-obfuscator/node_modules/zeparser/tests.js"
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
 		"height": 93.0,
 		"where_history":
 		[
+			"/Users/irwansyah/Documents/PROJECTS/angular/SC-Monitoring/src/modules",
+			""
 		]
 	},
 	"find_state":
@@ -715,6 +851,19 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"fromNow",
+			"IRoutingService",
+			"admin",
+			"\"admin\"",
+			"$state",
+			"forEach",
+			"array",
+			"ng.IScope",
+			"IRootScopeService",
+			"$scope",
+			"$time",
+			"IDeferred",
+			"$log",
 			"replace",
 			"helper",
 			"model",
@@ -830,7 +979,43 @@
 		"selected_items":
 		[
 			[
-				"loginco",
+				"routing",
+				"src/modules/common/services/routing_service.ts"
+			],
+			[
+				"userdat",
+				"src/modules/common/services/UserDataResult.ts"
+			],
+			[
+				"rout",
+				"src/modules/common/services/routing_service.ts"
+			],
+			[
+				"sc.t",
+				"src/modules/common/domain_models/SC.ts"
+			],
+			[
+				"userdata",
+				"src/modules/common/services/UserDataResult.ts"
+			],
+			[
+				"angular-ui",
+				"typings/angular-ui-router/angular-ui-router.d.ts"
+			],
+			[
+				"angular.d",
+				"typings/angularjs/angular.d.ts"
+			],
+			[
+				"tsd.s",
+				"typings/tsd.d.ts"
+			],
+			[
+				"rou",
+				"src/modules/common/services/routing_service.coffee"
+			],
+			[
+				"logincon",
 				"src/modules/app/login/login_controller.coffee"
 			],
 			[
@@ -838,8 +1023,8 @@
 				"src/modules/common/domain_models/user.coffee"
 			],
 			[
-				"rou",
-				"src/modules/common/services/routing_service.coffee"
+				"loginco",
+				"src/modules/app/login/login_controller.coffee"
 			],
 			[
 				"secre",
@@ -868,10 +1053,6 @@
 			[
 				"session",
 				"backend/config/initializers/session_store.rb"
-			],
-			[
-				"logincon",
-				"backend/app/controllers/login_controller.rb"
 			],
 			[
 				"loginpre",
@@ -994,10 +1175,6 @@
 				"frontend/gulp/tasks/index.js"
 			],
 			[
-				"rout",
-				"frontend/src/modules/common/services/RoutingService.coffee"
-			],
-			[
 				"tasks/inde",
 				"frontend/gulp/tasks/index.js"
 			],
@@ -1008,10 +1185,6 @@
 			[
 				"gulp/in",
 				"frontend/gulp/index.js"
-			],
-			[
-				"routing",
-				"frontend/src/modules/common/services/RoutingService.coffee"
 			],
 			[
 				"pack",
@@ -1132,7 +1305,7 @@
 				"Argv"
 			]
 		],
-		"width": 755.0
+		"width": 792.0
 	},
 	"selected_group": 0,
 	"settings":
@@ -1142,7 +1315,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 272.0,
+	"side_bar_width": 343.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

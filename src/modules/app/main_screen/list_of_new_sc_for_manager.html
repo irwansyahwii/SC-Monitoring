@@ -1,5 +1,9 @@
 
-<ion-view view-title="Dashboard">
+<ion-view>
+  <ion-nav-title>Monitoring SC</ion-nav-title>
+  <ion-nav-buttons side="left">
+    <button ng-click="toggleSideMenu()" class="button icon ion-navicon"></button>
+  </ion-nav-buttons>
   <ion-content class="padding">
     <ion-list>
       <ion-item ng-click="show_detail_sc(sc)" ng-repeat="sc in current_user.data.list_of_new_sc | orderBy:'+created_date'" class="item-icon-right">

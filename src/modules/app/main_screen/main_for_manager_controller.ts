@@ -13,13 +13,14 @@ interface IMainControllerScope extends ng.IScope{
     selected_button_bar_id:string;
     show_detail_sc(sc:SC);
     selected_sc: SC;
+    toggleSideMenu();
 }
 
 class MainForManagerController{
     static get factory(): any[] {
-        var arr = ["$scope", "RoutingService", "$log",
-            ($scope, RoutingService, $log) =>{
-                var controller = new MainForManagerController($scope, RoutingService, $log);
+        var arr = ["$scope", "RoutingService", "$log", "$ionicSideMenuDelegate",
+            ($scope, RoutingService, $log, $ionicSideMenuDelegate) =>{
+                var controller = new MainForManagerController($scope, RoutingService, $log, $ionicSideMenuDelegate);
 
                 return controller;
             }];
@@ -30,14 +31,23 @@ class MainForManagerController{
     private $scope: IMainControllerScope;
     private RoutingService : RoutingService;
     private $log: ng.ILogService;
+    private $ionicSideMenuDelegate:any;
 
-    constructor($scope: IMainControllerScope, RoutingService: RoutingService, $log: ng.ILogService) {
+    constructor($scope: IMainControllerScope, RoutingService: RoutingService, 
+        $log: ng.ILogService, $ionicSideMenuDelegate:any) {
+
         this.$scope = $scope;
         this.RoutingService = RoutingService;
         this.$log = $log;
+        this.$ionicSideMenuDelegate = $ionicSideMenuDelegate;
 
 
         this.$scope.current_user = User.current_user;
+
+
+        this.$scope.toggleSideMenu = () =>{
+            this.$ionicSideMenuDelegate.toggleLeft();
+        }
 
         this.$scope.show_detail_sc = (sc: SC) => {
             this.$log.debug("show_detail_sc called");

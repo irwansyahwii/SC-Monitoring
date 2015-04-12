@@ -1,14 +1,19 @@
 
-<form>
-  <div class="list">       
-    <label class="item item-input item-stacked-label"><span class="input-label">Username</span>
-      <input ng-model="user.username" type="text" placeholder="Please enter your username..."/>
-    </label>
-    <label class="item item-input item-stacked-label"><span class="input-label">Password</span>
-      <input ng-model="user.password" type="password" placeholder="Please enter your password..."/>
-    </label>
-    <div class="item">
-      <button ng-click="login()" class="button button-block button-positive">Login</button>
+<ion-header-bar class="bar-positive">
+  <h1 class="title">Monitoring SC</h1>
+</ion-header-bar>
+<ion-content>
+  <form>
+    <div class="list">       
+      <label class="item item-input item-stacked-label"><span class="input-label">Username</span>
+        <input ng-model="user.username" type="text" placeholder="Please enter your username..."/>
+      </label>
+      <label class="item item-input item-stacked-label"><span class="input-label">Password</span>
+        <input ng-model="user.password" type="password" placeholder="Please enter your password..."/>
+      </label>
+      <div class="item">
+        <button ng-click="login()" class="button button-block button-positive">Login</button>
+      </div>
     </div>
-  </div>
-</form>
+  </form>
+</ion-content>

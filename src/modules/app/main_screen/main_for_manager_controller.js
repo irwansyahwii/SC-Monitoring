@@ -1,12 +1,16 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 var User = require("../../common/domain_models/user");
 var MainForManagerController = (function () {
-    function MainForManagerController($scope, RoutingService, $log) {
+    function MainForManagerController($scope, RoutingService, $log, $ionicSideMenuDelegate) {
         var _this = this;
         this.$scope = $scope;
         this.RoutingService = RoutingService;
         this.$log = $log;
+        this.$ionicSideMenuDelegate = $ionicSideMenuDelegate;
         this.$scope.current_user = User.current_user;
+        this.$scope.toggleSideMenu = function () {
+            _this.$ionicSideMenuDelegate.toggleLeft();
+        };
         this.$scope.show_detail_sc = function (sc) {
             _this.$log.debug("show_detail_sc called");
             _this.$scope.selected_sc = sc;
@@ -31,8 +35,8 @@ var MainForManagerController = (function () {
     }
     Object.defineProperty(MainForManagerController, "factory", {
         get: function () {
-            var arr = ["$scope", "RoutingService", "$log", function ($scope, RoutingService, $log) {
-                var controller = new MainForManagerController($scope, RoutingService, $log);
+            var arr = ["$scope", "RoutingService", "$log", "$ionicSideMenuDelegate", function ($scope, RoutingService, $log, $ionicSideMenuDelegate) {
+                var controller = new MainForManagerController($scope, RoutingService, $log, $ionicSideMenuDelegate);
                 return controller;
             }];
             return arr;

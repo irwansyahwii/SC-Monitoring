@@ -13,6 +13,7 @@
         controller: "MainForManagerController"
       });
       $stateProvider.state("main_for_manager.tab_new_view", {
+        url: "/new",
         views: {
           "tab_new_view": {
             templateUrl: "app/main_screen/list_of_new_sc_for_manager.html"
@@ -20,6 +21,7 @@
         }
       });
       $stateProvider.state("main_for_manager.show_detail_sc", {
+        url: "/new/detail",
         views: {
           "tab_new_view": {
             templateUrl: "app/main_screen/show_detail_sc.html"
