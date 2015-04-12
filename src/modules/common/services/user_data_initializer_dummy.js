@@ -59,11 +59,15 @@ var UserDataInitializer = (function () {
         sc.gl_account = "5030200000";
         sc.business_area = "2110";
         sc.vendor = "Mitra Jaringan Global";
+        sc.rejected_date = "12/4/2015";
+        sc.rejected_message = "Duinya kurang";
         result.push(sc);
         sc = new SC();
         sc.sc_number = "923456702";
         sc.project_name = "Renewal Sewa Radio 2015";
         sc.created_date = "8/4/2015";
+        sc.rejected_date = "12/4/2015";
+        sc.rejected_message = "Vendor kurang bagus";
         result.push(sc);
         return result;
     };
@@ -135,6 +139,7 @@ var UserDataInitializer = (function () {
         sc.fully_approved_date = "8/4/2015";
         sc.POInfo.po_number = "4800012345";
         sc.GRInfo.gr_number = "6000012345";
+        sc.GRInfo.gr_date = "10/4/2015";
         result.push(sc);
         sc = new SC();
         sc.sc_number = "123456702";
@@ -143,6 +148,7 @@ var UserDataInitializer = (function () {
         sc.fully_approved_date = "9/4/2015";
         sc.POInfo.po_number = "4800034567";
         sc.GRInfo.gr_number = "6000012346";
+        sc.GRInfo.gr_date = "10/4/2015";
         result.push(sc);
         return result;
     };

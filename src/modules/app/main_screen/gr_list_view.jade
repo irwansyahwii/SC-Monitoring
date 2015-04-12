@@ -1,9 +1,10 @@
 ion-list
-    ion-item.item-icon-right(ng-click="show_gr_detail_sc(sc)" ng-repeat="sc in current_user.data.list_of_gr_sc | orderBy:'+created_date'")
+    ion-item.item-icon-right( ng-repeat="sc in current_user.data.list_of_gr_sc | orderBy:'+created_date'")
         div {{sc.sc_number}}
         div {{sc.project_name}}
         div Approved {{to_moment(sc.fully_approved_date)}}
         div {{sc.POInfo.po_number}}
         div {{sc.GRInfo.gr_number}}        
+        div GR date: {{sc.GRInfo.gr_date}}        
         div {{to_moment(sc.created_date)}}
-        i.icon.ion-chevron-right
+        
