@@ -23,5 +23,5 @@ ion-side-menus
         ion-nav-view(name="tab_payment_status_view")
         
 
-      ion-tab(title="Rejected" icon-off="ion-ios-analytics-outline" icon-on="ion-ios-analytics")
-        ion-nav-view(name="tab-rejected")
+      ion-tab(on-select="on_tab_rejected_selected()" title="Rejected" icon-off="ion-ios-analytics-outline" icon-on="ion-ios-analytics")
+        ion-nav-view(name="tab_rejected")

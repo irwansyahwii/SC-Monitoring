@@ -41,6 +41,12 @@ var MainForManagerController = (function () {
             _this.$scope.selected_sc = sc;
             RoutingService.showTabNewDetailSC(sc);
         };
+        this.$scope.show_tab_rejected_detail_sc = function (sc) {
+            _this.$log.debug("show_tab_rejected_detail_sc called");
+            _this.$log.debug(sc);
+            _this.$scope.selected_sc = sc;
+            RoutingService.showTabRejectedDetailSC(sc);
+        };
         this.$scope.show_approved_detail_sc = function (sc) {
             _this.$log.debug("show_approved_detail_sc called");
             _this.$log.debug(sc);
@@ -77,6 +83,9 @@ var MainForManagerController = (function () {
         this.$scope.on_tab_payment_status_selected = function () {
             _this.RoutingService.gotoListOfPaymentStatusScreen();
             _this.$scope.button_bar_clicked("approved");
+        };
+        this.$scope.on_tab_rejected_selected = function () {
+            _this.RoutingService.gotoListOfRejectedScreen();
         };
     }
     Object.defineProperty(MainForManagerController, "factory", {

@@ -18,6 +18,8 @@ interface IMainControllerScope extends ng.IScope{
     show_po_detail_sc(sc:SC);
     back_button_clicked();
     show_gr_detail_sc(sc:SC);
+    on_tab_rejected_selected();
+    show_tab_rejected_detail_sc(sc:SC);
 }
 
 class MainForManagerController{
@@ -94,6 +96,14 @@ class MainForManagerController{
             RoutingService.showTabNewDetailSC(sc);
         }
 
+        this.$scope.show_tab_rejected_detail_sc = (sc: SC) => {
+            this.$log.debug("show_tab_rejected_detail_sc called");
+            this.$log.debug(sc);
+            this.$scope.selected_sc = sc;
+
+            RoutingService.showTabRejectedDetailSC(sc);
+        }
+
         this.$scope.show_approved_detail_sc = (sc:SC) => {
             this.$log.debug("show_approved_detail_sc called");
             this.$log.debug(sc);
@@ -139,6 +149,9 @@ class MainForManagerController{
         this.$scope.on_tab_payment_status_selected = () => {            
             this.RoutingService.gotoListOfPaymentStatusScreen();
             this.$scope.button_bar_clicked("approved");
+        }
+        this.$scope.on_tab_rejected_selected = () => {            
+            this.RoutingService.gotoListOfRejectedScreen();
         }
     }
 }

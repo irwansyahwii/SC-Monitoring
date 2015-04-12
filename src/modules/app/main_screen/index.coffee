@@ -15,6 +15,12 @@ the_module.config(["$stateProvider",
                     "tab_new_view":
                         templateUrl: "app/main_screen/list_of_new_sc_for_manager.html"   
 
+            $stateProvider.state "main_for_manager.tab_rejected_view",
+                url:"/rejected"
+                views:
+                    "tab_rejected":
+                        templateUrl: "app/main_screen/list_of_rejected_sc_for_manager.html"   
+
             $stateProvider.state "main_for_manager.show_detail_sc",
                 url:"/detail"
                 views:
@@ -60,6 +66,12 @@ the_module.config(["$stateProvider",
                 views:
                     "tab_payment_status_view":
                         templateUrl: "app/main_screen/show_detail_sc.html"   
+
+            $stateProvider.state "main_for_manager.rejected_show_detail_sc",
+                url:"/detail"
+                views:
+                    "tab_rejected":
+                        templateUrl: "app/main_screen/show_detail_sc.html"                           
 
     ])
 

@@ -1,0 +1,11 @@
+ion-view
+    ion-nav-title Monitoring SC
+    ion-nav-buttons(side="left")
+        button.button.icon.ion-navicon(ng-click="toggleSideMenu()")
+    ion-content.padding
+        ion-list
+            ion-item.item-icon-right(ng-click="show_tab_rejected_detail_sc(sc)" ng-repeat="sc in current_user.data.list_of_rejected_sc | orderBy:'+created_date'")
+                div {{sc.sc_number}}
+                div {{sc.project_name}}
+                div {{to_moment(sc.created_date)}}
+                i.icon.ion-chevron-right

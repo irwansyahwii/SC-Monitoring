@@ -20,6 +20,14 @@
           }
         }
       });
+      $stateProvider.state("main_for_manager.tab_rejected_view", {
+        url: "/rejected",
+        views: {
+          "tab_rejected": {
+            templateUrl: "app/main_screen/list_of_rejected_sc_for_manager.html"
+          }
+        }
+      });
       $stateProvider.state("main_for_manager.show_detail_sc", {
         url: "/detail",
         views: {
@@ -76,10 +84,18 @@
           }
         }
       });
-      return $stateProvider.state("main_for_manager.gr_show_detail_sc", {
+      $stateProvider.state("main_for_manager.gr_show_detail_sc", {
         url: "/gr_detail",
         views: {
           "tab_payment_status_view": {
+            templateUrl: "app/main_screen/show_detail_sc.html"
+          }
+        }
+      });
+      return $stateProvider.state("main_for_manager.rejected_show_detail_sc", {
+        url: "/detail",
+        views: {
+          "tab_rejected": {
             templateUrl: "app/main_screen/show_detail_sc.html"
           }
         }

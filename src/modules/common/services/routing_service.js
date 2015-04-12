@@ -63,6 +63,14 @@ var RoutingService = (function () {
         this.$log.debug("showTabPaymentStatusGRDetailSC called");
         this.$state.go("main_for_manager.gr_show_detail_sc");
     };
+    RoutingService.prototype.gotoListOfRejectedScreen = function () {
+        this.$log.debug("RoutingService.gotoListOfRejectedScreen() executing...");
+        this.$state.go("main_for_manager.tab_rejected_view");
+    };
+    RoutingService.prototype.showTabRejectedDetailSC = function (sc) {
+        this.$log.debug("showTabRejectedDetailSC called");
+        this.$state.go("main_for_manager.rejected_show_detail_sc");
+    };
     return RoutingService;
 })();
 module.exports = RoutingService;

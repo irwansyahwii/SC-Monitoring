@@ -45,6 +45,28 @@ var UserDataInitializer = (function () {
         result.push(sc);
         return result;
     };
+    UserDataInitializer.prototype.create_list_of_rejected_sc = function () {
+        var result = new Array();
+        var sc = new SC();
+        sc.sc_number = "923456701";
+        sc.project_name = "Renewal Sewa Genset 2015";
+        sc.pm_name = "Andri";
+        sc.currency = "IDR";
+        sc.sc_value = 15000000;
+        sc.quantity = 6;
+        sc.created_date = "1/2/2015";
+        sc.cost_center = "C63CU";
+        sc.gl_account = "5030200000";
+        sc.business_area = "2110";
+        sc.vendor = "Mitra Jaringan Global";
+        result.push(sc);
+        sc = new SC();
+        sc.sc_number = "923456702";
+        sc.project_name = "Renewal Sewa Radio 2015";
+        sc.created_date = "8/4/2015";
+        result.push(sc);
+        return result;
+    };
     UserDataInitializer.prototype.create_list_of_approved_sc = function () {
         var result = new Array();
         var sc = new SC();
@@ -139,6 +161,7 @@ var UserDataInitializer = (function () {
             result.list_of_approved_sc = _this.create_list_of_approved_sc();
             result.list_of_po_sc = _this.create_list_of_po_sc();
             result.list_of_gr_sc = _this.create_list_of_gr_sc();
+            result.list_of_rejected_sc = _this.create_list_of_rejected_sc();
             deferred.resolve(result);
         }, 1);
         return deferred.promise;

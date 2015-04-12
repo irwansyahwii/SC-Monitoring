@@ -73,6 +73,17 @@ class RoutingService {
         this.$log.debug("showTabPaymentStatusGRDetailSC called");
         this.$state.go("main_for_manager.gr_show_detail_sc");                
     }
+
+    gotoListOfRejectedScreen() {
+        this.$log.debug("RoutingService.gotoListOfRejectedScreen() executing...");
+        this.$state.go("main_for_manager.tab_rejected_view");
+    }
+
+    showTabRejectedDetailSC(sc){
+        this.$log.debug("showTabRejectedDetailSC called");
+        this.$state.go("main_for_manager.rejected_show_detail_sc");                        
+    }
+
 }
 
 export = RoutingService;

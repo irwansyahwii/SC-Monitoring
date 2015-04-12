@@ -61,6 +61,36 @@ class UserDataInitializer implements IUserDataInitializer{
         return result;
     }    
 
+    create_list_of_rejected_sc() : SC[] {
+        var result: SC[] = new Array<SC>();
+
+        var sc:SC = new SC();
+        sc.sc_number = "923456701";
+        sc.project_name = "Renewal Sewa Genset 2015"        
+        sc.pm_name = "Andri";
+        sc.currency = "IDR";
+        sc.sc_value = 15000000;
+        sc.quantity = 6;
+        sc.created_date = "1/2/2015";
+        sc.cost_center = "C63CU";
+        sc.gl_account = "5030200000";
+        sc.business_area = "2110";
+        sc.vendor = "Mitra Jaringan Global";
+
+
+        result.push(sc);
+
+
+        sc = new SC();
+        sc.sc_number = "923456702";
+        sc.project_name = "Renewal Sewa Radio 2015"
+        sc.created_date = "8/4/2015";
+
+        result.push(sc);
+
+        return result;
+    }        
+
     create_list_of_approved_sc() : SC[] {
         var result: SC[] = new Array<SC>();
 
@@ -180,6 +210,7 @@ class UserDataInitializer implements IUserDataInitializer{
                 result.list_of_approved_sc = this.create_list_of_approved_sc();
                 result.list_of_po_sc = this.create_list_of_po_sc();
                 result.list_of_gr_sc = this.create_list_of_gr_sc();
+                result.list_of_rejected_sc = this.create_list_of_rejected_sc();
 
                 deferred.resolve(result);
             }, 1);        
