@@ -21,6 +21,13 @@ var MainForManagerController = (function () {
                 back_view.url = "/main/payment_status/po";
                 _this.$ionicHistory.goBack();
             }
+            else if (current_state === "main_for_manager.gr_show_detail_sc") {
+                var back_view = _this.$ionicHistory.backView();
+                back_view.stateId = "main_for_manager.tab_payment_status_view.gr";
+                back_view.stateName = "main_for_manager.tab_payment_status_view.gr";
+                back_view.url = "/main/payment_status/gr";
+                _this.$ionicHistory.goBack();
+            }
             else {
                 _this.$ionicHistory.goBack();
             }
@@ -45,6 +52,12 @@ var MainForManagerController = (function () {
             _this.$log.debug(sc);
             _this.$scope.selected_sc = sc;
             RoutingService.showTabPaymentStatusPODetailSC(sc);
+        };
+        this.$scope.show_gr_detail_sc = function (sc) {
+            _this.$log.debug("show_gr_detail_sc called");
+            _this.$log.debug(sc);
+            _this.$scope.selected_sc = sc;
+            RoutingService.showTabPaymentStatusGRDetailSC(sc);
         };
         this.$scope.selected_button_bar_id = "approved";
         this.$scope.button_bar_clicked = function (button_id) {

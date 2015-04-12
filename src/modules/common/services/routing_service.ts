@@ -69,6 +69,10 @@ class RoutingService {
         this.$log.debug("showTabPaymentStatusPODetailSC called");
         this.$state.go("main_for_manager.po_show_detail_sc");        
     }
+    showTabPaymentStatusGRDetailSC(sc){
+        this.$log.debug("showTabPaymentStatusGRDetailSC called");
+        this.$state.go("main_for_manager.gr_show_detail_sc");                
+    }
 }
 
 export = RoutingService;

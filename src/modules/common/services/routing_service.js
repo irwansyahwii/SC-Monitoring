@@ -59,6 +59,10 @@ var RoutingService = (function () {
         this.$log.debug("showTabPaymentStatusPODetailSC called");
         this.$state.go("main_for_manager.po_show_detail_sc");
     };
+    RoutingService.prototype.showTabPaymentStatusGRDetailSC = function (sc) {
+        this.$log.debug("showTabPaymentStatusGRDetailSC called");
+        this.$state.go("main_for_manager.gr_show_detail_sc");
+    };
     return RoutingService;
 })();
 module.exports = RoutingService;

@@ -77,6 +77,7 @@
         }
       });
       return $stateProvider.state("main_for_manager.gr_show_detail_sc", {
+        url: "/gr_detail",
         views: {
           "tab_payment_status_view": {
             templateUrl: "app/main_screen/show_detail_sc.html"
