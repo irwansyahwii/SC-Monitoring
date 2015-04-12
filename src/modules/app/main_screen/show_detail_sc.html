@@ -2,10 +2,37 @@
 <ion-view>
   <ion-content class="padding">
     <ion-list>
-      <ion-item class="item-icon-right">
-        <div>{{selected_sc.sc_number}}</div>
-        <div>{{selected_sc.project_name}}</div>
-        <div>{{to_moment(selected_sc.created_date)}}</div><i class="icon ion-chevron-right"></i>
+      <ion-item>
+        <label class="item-input item-stacked-label"><span class="input-label">Nomor SC</span>
+          <div>{{selected_sc.sc_number}}</div>
+        </label>
+        <label class="item-input item-stacked-label"><span class="input-label">Nama Project</span>
+          <div>{{selected_sc.project_name}}</div>
+        </label>
+        <label class="item-input item-stacked-label"><span class="input-label">Nama PM</span>
+          <div>{{selected_sc.pm_name}}</div>
+        </label>
+        <label class="item-input item-stacked-label"><span class="input-label">Nilai SC</span>
+          <div>{{selected_sc.sc_value | currency: selected_sc.currency : 2}}</div>
+        </label>
+        <label class="item-input item-stacked-label"><span class="input-label">Quantity</span>
+          <div>{{selected_sc.quantity}}</div>
+        </label>
+        <label class="item-input item-stacked-label"><span class="input-label">Tanggal Create SC</span>
+          <div>{{to_moment(selected_sc.created_date)}}</div>
+        </label>
+        <label class="item-input item-stacked-label"><span class="input-label">Cost Center</span>
+          <div>{{selected_sc.cost_center}}</div>
+        </label>
+        <label class="item-input item-stacked-label"><span class="input-label">GL Account</span>
+          <div>{{selected_sc.gl_account}}</div>
+        </label>
+        <label class="item-input item-stacked-label"><span class="input-label">Business Area</span>
+          <div>{{selected_sc.business_area}}</div>
+        </label>
+        <label class="item-input item-stacked-label"><span class="input-label">Vendor</span>
+          <div>{{selected_sc.vendor}}</div>
+        </label>
       </ion-item>
     </ion-list>
   </ion-content>

@@ -36,8 +36,17 @@ class UserDataInitializer implements IUserDataInitializer{
 
         var sc:SC = new SC();
         sc.sc_number = "123456701";
-        sc.project_name = "Renewal Sewa Genset 2015"
-        sc.created_date = "23/3/2015";
+        sc.project_name = "Renewal Sewa Genset 2015"        
+        sc.pm_name = "Andri";
+        sc.currency = "IDR";
+        sc.sc_value = 15000000;
+        sc.quantity = 6;
+        sc.created_date = "1/2/2015";
+        sc.cost_center = "C63CU";
+        sc.gl_account = "5030200000";
+        sc.business_area = "2110";
+        sc.vendor = "Mitra Jaringan Global";
+
 
         result.push(sc);
 

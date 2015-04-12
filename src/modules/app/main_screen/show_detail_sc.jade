@@ -1,8 +1,43 @@
 ion-view
     ion-content.padding
         ion-list
-            ion-item.item-icon-right
-                div {{selected_sc.sc_number}}
-                div {{selected_sc.project_name}}
-                div {{to_moment(selected_sc.created_date)}}
-                i.icon.ion-chevron-right
+            ion-item
+                label.item-input.item-stacked-label
+                    span.input-label Nomor SC
+                    div {{selected_sc.sc_number}}
+                label.item-input.item-stacked-label
+                    span.input-label Nama Project
+                    div {{selected_sc.project_name}}
+
+                label.item-input.item-stacked-label
+                    span.input-label Nama PM
+                    div {{selected_sc.pm_name}}
+
+                label.item-input.item-stacked-label
+                    span.input-label Nilai SC
+                    div {{selected_sc.sc_value | currency: selected_sc.currency : 2}}
+
+                label.item-input.item-stacked-label
+                    span.input-label Quantity
+                    div {{selected_sc.quantity}}
+
+                label.item-input.item-stacked-label
+                    span.input-label Tanggal Create SC
+                    div {{to_moment(selected_sc.created_date)}}
+
+
+                label.item-input.item-stacked-label
+                    span.input-label Cost Center
+                    div {{selected_sc.cost_center}}
+
+                label.item-input.item-stacked-label
+                    span.input-label GL Account
+                    div {{selected_sc.gl_account}}
+
+                label.item-input.item-stacked-label
+                    span.input-label Business Area
+                    div {{selected_sc.business_area}}
+
+                label.item-input.item-stacked-label
+                    span.input-label Vendor
+                    div {{selected_sc.vendor}}
