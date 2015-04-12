@@ -24,9 +24,9 @@ interface IMainControllerScope extends ng.IScope{
 
 class MainForManagerController{
     static get factory(): any[] {
-        var arr = ["$scope", "RoutingService", "$log", "$ionicSideMenuDelegate", "$ionicHistory",
-            ($scope, RoutingService, $log, $ionicSideMenuDelegate, $ionicHistory) =>{
-                var controller = new MainForManagerController($scope, RoutingService, $log, $ionicSideMenuDelegate, $ionicHistory);
+        var arr = ["$scope", "RoutingService", "$log", "$ionicSideMenuDelegate", "$ionicHistory", "$timeout",
+            ($scope, RoutingService, $log, $ionicSideMenuDelegate, $ionicHistory, $timeout) =>{
+                var controller = new MainForManagerController($scope, RoutingService, $log, $ionicSideMenuDelegate, $ionicHistory, $timeout);
 
                 return controller;
             }];
@@ -40,15 +40,17 @@ class MainForManagerController{
     private $ionicSideMenuDelegate:any;
     private selected_tab_id:string;
     private $ionicHistory:any;
+    private $timeout:ng.ITimeoutService;
 
     constructor($scope: IMainControllerScope, RoutingService: RoutingService, 
-        $log: ng.ILogService, $ionicSideMenuDelegate:any, $ionicHistory) {
+        $log: ng.ILogService, $ionicSideMenuDelegate:any, $ionicHistory, $timeout: ng.ITimeoutService) {
 
         this.$scope = $scope;
         this.RoutingService = RoutingService;
         this.$log = $log;
         this.$ionicSideMenuDelegate = $ionicSideMenuDelegate;
         this.$ionicHistory = $ionicHistory;
+        this.$timeout = $timeout;
 
 
         this.$scope.current_user = User.current_user;
@@ -59,7 +61,8 @@ class MainForManagerController{
 
             var current_state =  this.$ionicHistory.currentStateName();
 
-            // this.$log.debug(this.$ionicHistory.backView());
+            this.$log.debug(current_state);
+            this.$log.debug(this.$ionicHistory.backView());
 
 
             if(current_state === "main_for_manager.po_show_detail_sc"){
@@ -128,10 +131,14 @@ class MainForManagerController{
             RoutingService.showTabPaymentStatusGRDetailSC(sc);            
         }
 
-        this.$scope.selected_button_bar_id = "approved";
+        this.$scope.selected_button_bar_id = "";
         this.$scope.button_bar_clicked = (button_id) => {
+            this.$log.debug("button_bar_clicked, button_id: %s", button_id);
+
+            this.$scope.selected_sc = null;
             this.selected_tab_id = button_id;
             this.$scope.selected_button_bar_id = button_id;
+            // this.$scope.$apply();
             RoutingService.showPaymentStatusListView(this.$scope.selected_button_bar_id);
         }        
 
@@ -146,9 +153,24 @@ class MainForManagerController{
             this.selected_tab_id = "new";
             this.RoutingService.gotoListOfNewSCScreen();
         }
-        this.$scope.on_tab_payment_status_selected = () => {            
+        this.$scope.on_tab_payment_status_selected = () => {       
+            this.$log.debug("on_tab_payment_status_selected called");     
             this.RoutingService.gotoListOfPaymentStatusScreen();
-            this.$scope.button_bar_clicked("approved");
+            if(this.$scope.selected_button_bar_id === ""){
+                this.$log.debug("clicking approved");
+                this.$scope.button_bar_clicked("approved");
+            }
+            else{
+                this.$log.debug("using previous button bar id, %s", this.$scope.selected_button_bar_id);
+                if(this.$scope.selected_sc === null){
+                    $timeout(()=> {
+                            this.$scope.button_bar_clicked(this.$scope.selected_button_bar_id);
+                        }, 2)
+                    
+                }
+                
+            }
+            
         }
         this.$scope.on_tab_rejected_selected = () => {            
             this.RoutingService.gotoListOfRejectedScreen();

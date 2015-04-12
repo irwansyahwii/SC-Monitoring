@@ -1,19 +1,21 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 var User = require("../../common/domain_models/user");
 var MainForManagerController = (function () {
-    function MainForManagerController($scope, RoutingService, $log, $ionicSideMenuDelegate, $ionicHistory) {
+    function MainForManagerController($scope, RoutingService, $log, $ionicSideMenuDelegate, $ionicHistory, $timeout) {
         var _this = this;
         this.$scope = $scope;
         this.RoutingService = RoutingService;
         this.$log = $log;
         this.$ionicSideMenuDelegate = $ionicSideMenuDelegate;
         this.$ionicHistory = $ionicHistory;
+        this.$timeout = $timeout;
         this.$scope.current_user = User.current_user;
         this.$scope.back_button_clicked = function () {
             _this.$log.debug("back_button_clicked called");
             // this.$log.debug(this.$ionicHistory.currentStateName());
             var current_state = _this.$ionicHistory.currentStateName();
-            // this.$log.debug(this.$ionicHistory.backView());
+            _this.$log.debug(current_state);
+            _this.$log.debug(_this.$ionicHistory.backView());
             if (current_state === "main_for_manager.po_show_detail_sc") {
                 var back_view = _this.$ionicHistory.backView();
                 back_view.stateId = "main_for_manager.tab_payment_status_view.po";
@@ -65,10 +67,13 @@ var MainForManagerController = (function () {
             _this.$scope.selected_sc = sc;
             RoutingService.showTabPaymentStatusGRDetailSC(sc);
         };
-        this.$scope.selected_button_bar_id = "approved";
+        this.$scope.selected_button_bar_id = "";
         this.$scope.button_bar_clicked = function (button_id) {
+            _this.$log.debug("button_bar_clicked, button_id: %s", button_id);
+            _this.$scope.selected_sc = null;
             _this.selected_tab_id = button_id;
             _this.$scope.selected_button_bar_id = button_id;
+            // this.$scope.$apply();
             RoutingService.showPaymentStatusListView(_this.$scope.selected_button_bar_id);
         };
         this.$scope.to_moment = function (dt) {
@@ -81,8 +86,20 @@ var MainForManagerController = (function () {
             _this.RoutingService.gotoListOfNewSCScreen();
         };
         this.$scope.on_tab_payment_status_selected = function () {
+            _this.$log.debug("on_tab_payment_status_selected called");
             _this.RoutingService.gotoListOfPaymentStatusScreen();
-            _this.$scope.button_bar_clicked("approved");
+            if (_this.$scope.selected_button_bar_id === "") {
+                _this.$log.debug("clicking approved");
+                _this.$scope.button_bar_clicked("approved");
+            }
+            else {
+                _this.$log.debug("using previous button bar id, %s", _this.$scope.selected_button_bar_id);
+                if (_this.$scope.selected_sc === null) {
+                    $timeout(function () {
+                        _this.$scope.button_bar_clicked(_this.$scope.selected_button_bar_id);
+                    }, 2);
+                }
+            }
         };
         this.$scope.on_tab_rejected_selected = function () {
             _this.RoutingService.gotoListOfRejectedScreen();
@@ -90,8 +107,8 @@ var MainForManagerController = (function () {
     }
     Object.defineProperty(MainForManagerController, "factory", {
         get: function () {
-            var arr = ["$scope", "RoutingService", "$log", "$ionicSideMenuDelegate", "$ionicHistory", function ($scope, RoutingService, $log, $ionicSideMenuDelegate, $ionicHistory) {
-                var controller = new MainForManagerController($scope, RoutingService, $log, $ionicSideMenuDelegate, $ionicHistory);
+            var arr = ["$scope", "RoutingService", "$log", "$ionicSideMenuDelegate", "$ionicHistory", "$timeout", function ($scope, RoutingService, $log, $ionicSideMenuDelegate, $ionicHistory, $timeout) {
+                var controller = new MainForManagerController($scope, RoutingService, $log, $ionicSideMenuDelegate, $ionicHistory, $timeout);
                 return controller;
             }];
             return arr;
