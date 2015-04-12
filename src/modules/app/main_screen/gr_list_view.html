@@ -1,8 +1,11 @@
 
 <ion-list>
-  <ion-item ng-repeat="sc in current_user.data.list_of_gr_sc | orderBy:'+created_date'" class="item-icon-right">
+  <ion-item ng-click="show_detail_sc(sc)" ng-repeat="sc in current_user.data.list_of_gr_sc | orderBy:'+created_date'" class="item-icon-right">
     <div>{{sc.sc_number}}</div>
     <div>{{sc.project_name}}</div>
+    <div>Approved {{to_moment(sc.fully_approved_date)}}</div>
+    <div>{{sc.POInfo.po_number}}</div>
+    <div>{{sc.GRInfo.gr_number}}        </div>
     <div>{{to_moment(sc.created_date)}}</div><i class="icon ion-chevron-right"></i>
   </ion-item>
 </ion-list>

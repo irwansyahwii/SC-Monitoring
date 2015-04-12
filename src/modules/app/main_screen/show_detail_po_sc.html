@@ -1,0 +1,33 @@
+
+<ion-view>
+  <ion-content class="padding">
+    <ion-list>
+      <ion-item>
+        <label class="item-input item-stacked-label"><span class="input-label">Nomor SC</span>
+          <div>{{selected_sc.sc_number}}</div>
+        </label>
+        <label class="item-input item-stacked-label"><span class="input-label">Nama Project</span>
+          <div>{{selected_sc.project_name}}</div>
+        </label>
+        <label class="item-input item-stacked-label"><span class="input-label">Vendor</span>
+          <div>{{selected_sc.vendor}}</div>
+        </label>
+        <label class="item-input item-stacked-label"><span class="input-label">Buyer</span>
+          <div>{{selected_sc.POInfo.buyer}}</div>
+        </label>
+        <label class="item-input item-stacked-label"><span class="input-label">No PO</span>
+          <div>{{selected_sc.POInfo.po_number}}</div>
+        </label>
+        <label class="item-input item-stacked-label"><span class="input-label">Tanggal PO</span>
+          <div>{{selected_sc.POInfo.po_date}}</div>
+        </label>
+        <label class="item-input item-stacked-label"><span class="input-label">Delivery Date PO</span>
+          <div>{{selected_sc.POInfo.po_delivery_date}}</div>
+        </label>
+        <label class="item-input item-stacked-label"><span class="input-label">Nilai PO</span>
+          <div>{{selected_sc.POInfo.po_value | currency:selected_sc.POInfo.currency:2}}</div>
+        </label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -19,7 +19,7 @@ class SC{
     rejected_date: string = "";
     rejected_message: string = "";    
     POInfo : SCPOInfo = new SCPOInfo();
-    GRInfo : SCGRInfo = new SCGRInfo();    
+    GRInfo : SCGRInfo = new SCGRInfo();        
 }
 
 export = SC;

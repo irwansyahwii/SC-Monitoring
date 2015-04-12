@@ -44,7 +44,7 @@ class RoutingService {
         this.$state.go("main_for_manager.tab_payment_status_view");
     }
 
-    showListView(button_bar_id) {
+    showPaymentStatusListView(button_bar_id) {
         this.$log.debug("RoutingService.showListView() button_bar_id:", button_bar_id);
         if(button_bar_id === "approved"){
             this.$state.go("main_for_manager.tab_payment_status_view.approved");
@@ -57,8 +57,17 @@ class RoutingService {
         }
     }
 
-    showDetailSC(selected_tab_id, sc){
-        this.$state.go("main_for_manager." + selected_tab_id + "_show_detail_sc");
+    showTabNewDetailSC(sc){
+        this.$log.debug("showTabNewDetailSC called");
+        this.$state.go("main_for_manager.show_detail_sc");        
+    }
+    showTabPaymentStatusApprovedDetailSC(sc){
+        this.$log.debug("showTabPaymentStatusApprovedDetailSC called");
+        this.$state.go("main_for_manager.approved_show_detail_sc");        
+    }
+    showTabPaymentStatusPODetailSC(sc){
+        this.$log.debug("showTabPaymentStatusPODetailSC called");
+        this.$state.go("main_for_manager.po_show_detail_sc");        
     }
 }
 

@@ -20,23 +20,16 @@
           }
         }
       });
-      $stateProvider.state("main_for_manager.new_show_detail_sc", {
-        url: "/new/detail",
+      $stateProvider.state("main_for_manager.show_detail_sc", {
+        url: "/detail",
         views: {
           "tab_new_view": {
             templateUrl: "app/main_screen/show_detail_sc.html"
           }
         }
       });
-      $stateProvider.state("main_for_manager.approved_show_detail_sc", {
-        url: "/approved/detail",
-        views: {
-          "tab_payment_status_view": {
-            templateUrl: "app/main_screen/show_detail_sc.html"
-          }
-        }
-      });
       $stateProvider.state("main_for_manager.tab_payment_status_view", {
+        url: "/payment_status",
         views: {
           "tab_payment_status_view": {
             templateUrl: "app/main_screen/list_of_payment_status_sc_for_manager.html"
@@ -44,6 +37,7 @@
         }
       });
       $stateProvider.state("main_for_manager.tab_payment_status_view.approved", {
+        url: "/approved",
         views: {
           "list_view": {
             templateUrl: "app/main_screen/approved_list_view.html"
@@ -51,16 +45,41 @@
         }
       });
       $stateProvider.state("main_for_manager.tab_payment_status_view.po", {
+        url: "/po",
         views: {
           "list_view": {
             templateUrl: "app/main_screen/po_list_view.html"
           }
         }
       });
-      return $stateProvider.state("main_for_manager.tab_payment_status_view.gr", {
+      $stateProvider.state("main_for_manager.tab_payment_status_view.gr", {
+        url: "/gr",
         views: {
           "list_view": {
             templateUrl: "app/main_screen/gr_list_view.html"
+          }
+        }
+      });
+      $stateProvider.state("main_for_manager.approved_show_detail_sc", {
+        url: "/approved_detail",
+        views: {
+          "tab_payment_status_view": {
+            templateUrl: "app/main_screen/show_detail_sc.html"
+          }
+        }
+      });
+      $stateProvider.state("main_for_manager.po_show_detail_sc", {
+        url: "/po_detail",
+        views: {
+          "tab_payment_status_view": {
+            templateUrl: "app/main_screen/show_detail_po_sc.html"
+          }
+        }
+      });
+      return $stateProvider.state("main_for_manager.gr_show_detail_sc", {
+        views: {
+          "tab_payment_status_view": {
+            templateUrl: "app/main_screen/show_detail_sc.html"
           }
         }
       });

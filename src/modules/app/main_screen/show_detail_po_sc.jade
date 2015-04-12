@@ -1,0 +1,34 @@
+ion-view
+    ion-content.padding
+        ion-list
+            ion-item
+                label.item-input.item-stacked-label
+                    span.input-label Nomor SC
+                    div {{selected_sc.sc_number}}
+                label.item-input.item-stacked-label
+                    span.input-label Nama Project
+                    div {{selected_sc.project_name}}
+
+                label.item-input.item-stacked-label
+                    span.input-label Vendor
+                    div {{selected_sc.vendor}}
+
+                label.item-input.item-stacked-label
+                    span.input-label Buyer
+                    div {{selected_sc.POInfo.buyer}}
+
+                label.item-input.item-stacked-label
+                    span.input-label No PO
+                    div {{selected_sc.POInfo.po_number}}
+
+                label.item-input.item-stacked-label
+                    span.input-label Tanggal PO
+                    div {{selected_sc.POInfo.po_date}}
+
+                label.item-input.item-stacked-label
+                    span.input-label Delivery Date PO
+                    div {{selected_sc.POInfo.po_delivery_date}}
+
+                label.item-input.item-stacked-label
+                    span.input-label Nilai PO
+                    div {{selected_sc.POInfo.po_value | currency:selected_sc.POInfo.currency:2}}

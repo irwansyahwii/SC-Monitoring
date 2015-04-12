@@ -59,7 +59,7 @@ class UserDataInitializer implements IUserDataInitializer{
         result.push(sc);
 
         return result;
-    }
+    }    
 
     create_list_of_approved_sc() : SC[] {
         var result: SC[] = new Array<SC>();
@@ -68,6 +68,7 @@ class UserDataInitializer implements IUserDataInitializer{
         sc.sc_number = "123456501";
         sc.project_name = "Renewal Sewa Genset 2014"
         sc.created_date = "23/3/2015";
+        sc.fully_approved_date = "8/4/2015";
 
         result.push(sc);
 
@@ -82,6 +83,85 @@ class UserDataInitializer implements IUserDataInitializer{
         return result;
     }
 
+    create_list_of_po_sc() : SC[] {
+        var result: SC[] = new Array<SC>();
+
+        var sc:SC = new SC();
+        sc.sc_number = "123456701";
+        sc.project_name = "Renewal Sewa Genset 2015"        
+        sc.pm_name = "Andri";
+        sc.currency = "IDR";
+        sc.sc_value = 15000000;
+        sc.quantity = 6;
+        sc.created_date = "1/2/2015";
+        sc.cost_center = "C63CU";
+        sc.gl_account = "5030200000";
+        sc.business_area = "2110";
+        sc.vendor = "Mitra Jaringan Global";
+        sc.fully_approved_date = "8/4/2015";
+        sc.POInfo.po_number = "4800012345";
+        sc.POInfo.buyer = "Hilman";
+        sc.POInfo.po_date = "9/4/2015";
+        sc.POInfo.po_delivery_date = "10/4/2015";
+        sc.POInfo.currency = "USD";
+        sc.POInfo.po_value = 135000000;
+
+
+
+        result.push(sc);
+
+
+        sc = new SC();
+        sc.sc_number = "123456702";
+        sc.project_name = "Renewal Sewa Radio 2015"
+        sc.created_date = "8/4/2015";
+        sc.fully_approved_date = "9/4/2015";
+        sc.POInfo.po_number = "4800034567";
+        sc.POInfo.buyer = "Andi";
+        sc.POInfo.po_date = "9/4/2015";
+        sc.POInfo.po_delivery_date = "10/4/2015";
+        sc.POInfo.currency = "USD";
+        sc.POInfo.po_value = 365000000;
+
+        result.push(sc);
+
+        return result;
+    }    
+    create_list_of_gr_sc() : SC[] {
+        var result: SC[] = new Array<SC>();
+
+        var sc:SC = new SC();
+        sc.sc_number = "123456701";
+        sc.project_name = "Renewal Sewa Genset 2015"        
+        sc.pm_name = "Andri";
+        sc.currency = "IDR";
+        sc.sc_value = 15000000;
+        sc.quantity = 6;
+        sc.created_date = "1/2/2015";
+        sc.cost_center = "C63CU";
+        sc.gl_account = "5030200000";
+        sc.business_area = "2110";
+        sc.vendor = "Mitra Jaringan Global";
+        sc.fully_approved_date = "8/4/2015";
+        sc.POInfo.po_number = "4800012345";
+        sc.GRInfo.gr_number = "6000012345";
+
+
+        result.push(sc);
+
+
+        sc = new SC();
+        sc.sc_number = "123456702";
+        sc.project_name = "Renewal Sewa Radio 2015"
+        sc.created_date = "8/4/2015";
+        sc.fully_approved_date = "9/4/2015";
+        sc.POInfo.po_number = "4800034567";
+        sc.GRInfo.gr_number = "6000012346";
+
+        result.push(sc);
+
+        return result;
+    }   
     retrieve_user_data(username: string):ng.IPromise<UserDataResult> {
         var deferred = this.$q.defer();
 
@@ -98,6 +178,8 @@ class UserDataInitializer implements IUserDataInitializer{
                 }
                 result.list_of_new_sc = this.create_list_of_new_sc();
                 result.list_of_approved_sc = this.create_list_of_approved_sc();
+                result.list_of_po_sc = this.create_list_of_po_sc();
+                result.list_of_gr_sc = this.create_list_of_gr_sc();
 
                 deferred.resolve(result);
             }, 1);        

@@ -25,6 +25,9 @@ ion-view
                     span.input-label Tanggal Create SC
                     div {{to_moment(selected_sc.created_date)}}
 
+                label.item-input.item-stacked-label(ng-show="selected_sc.fully_approved_date != ''")
+                    span.input-label Tanggal Approve SC
+                    div {{to_moment(selected_sc.fully_approved_date)}}
 
                 label.item-input.item-stacked-label
                     span.input-label Cost Center

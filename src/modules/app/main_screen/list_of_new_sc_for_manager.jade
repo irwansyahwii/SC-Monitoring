@@ -4,7 +4,7 @@ ion-view
         button.button.icon.ion-navicon(ng-click="toggleSideMenu()")
     ion-content.padding
         ion-list
-            ion-item.item-icon-right(ng-click="show_detail_sc(sc)" ng-repeat="sc in current_user.data.list_of_new_sc | orderBy:'+created_date'")
+            ion-item.item-icon-right(ng-click="show_tab_new_detail_sc(sc)" ng-repeat="sc in current_user.data.list_of_new_sc | orderBy:'+created_date'")
                 div {{sc.sc_number}}
                 div {{sc.project_name}}
                 div {{to_moment(sc.created_date)}}

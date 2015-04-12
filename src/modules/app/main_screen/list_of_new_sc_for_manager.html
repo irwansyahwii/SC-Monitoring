@@ -6,7 +6,7 @@
   </ion-nav-buttons>
   <ion-content class="padding">
     <ion-list>
-      <ion-item ng-click="show_detail_sc(sc)" ng-repeat="sc in current_user.data.list_of_new_sc | orderBy:'+created_date'" class="item-icon-right">
+      <ion-item ng-click="show_tab_new_detail_sc(sc)" ng-repeat="sc in current_user.data.list_of_new_sc | orderBy:'+created_date'" class="item-icon-right">
         <div>{{sc.sc_number}}</div>
         <div>{{sc.project_name}}</div>
         <div>{{to_moment(sc.created_date)}}</div><i class="icon ion-chevron-right"></i>

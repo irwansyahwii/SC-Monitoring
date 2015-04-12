@@ -35,7 +35,7 @@ var RoutingService = (function () {
         this.$log.debug("RoutingService.gotoListOfPaymentStatusScreen() executing...");
         this.$state.go("main_for_manager.tab_payment_status_view");
     };
-    RoutingService.prototype.showListView = function (button_bar_id) {
+    RoutingService.prototype.showPaymentStatusListView = function (button_bar_id) {
         this.$log.debug("RoutingService.showListView() button_bar_id:", button_bar_id);
         if (button_bar_id === "approved") {
             this.$state.go("main_for_manager.tab_payment_status_view.approved");
@@ -47,8 +47,17 @@ var RoutingService = (function () {
             this.$state.go("main_for_manager.tab_payment_status_view.gr");
         }
     };
-    RoutingService.prototype.showDetailSC = function (selected_tab_id, sc) {
-        this.$state.go("main_for_manager." + selected_tab_id + "_show_detail_sc");
+    RoutingService.prototype.showTabNewDetailSC = function (sc) {
+        this.$log.debug("showTabNewDetailSC called");
+        this.$state.go("main_for_manager.show_detail_sc");
+    };
+    RoutingService.prototype.showTabPaymentStatusApprovedDetailSC = function (sc) {
+        this.$log.debug("showTabPaymentStatusApprovedDetailSC called");
+        this.$state.go("main_for_manager.approved_show_detail_sc");
+    };
+    RoutingService.prototype.showTabPaymentStatusPODetailSC = function (sc) {
+        this.$log.debug("showTabPaymentStatusPODetailSC called");
+        this.$state.go("main_for_manager.po_show_detail_sc");
     };
     return RoutingService;
 })();
