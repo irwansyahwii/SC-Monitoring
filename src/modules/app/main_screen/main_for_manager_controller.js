@@ -14,10 +14,11 @@ var MainForManagerController = (function () {
         this.$scope.show_detail_sc = function (sc) {
             _this.$log.debug("show_detail_sc called");
             _this.$scope.selected_sc = sc;
-            RoutingService.showDetailSC(sc);
+            RoutingService.showDetailSC(_this.selected_tab_id, sc);
         };
         this.$scope.selected_button_bar_id = "approved";
         this.$scope.button_bar_clicked = function (button_id) {
+            _this.selected_tab_id = button_id;
             _this.$scope.selected_button_bar_id = button_id;
             RoutingService.showListView(_this.$scope.selected_button_bar_id);
         };
@@ -26,6 +27,8 @@ var MainForManagerController = (function () {
             return result;
         };
         this.$scope.on_tab_new_selected = function () {
+            _this.$log.debug("on_tab_new_selected called");
+            _this.selected_tab_id = "new";
             _this.RoutingService.gotoListOfNewSCScreen();
         };
         this.$scope.on_tab_payment_status_selected = function () {

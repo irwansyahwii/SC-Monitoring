@@ -57,8 +57,8 @@ class RoutingService {
         }
     }
 
-    showDetailSC( sc){
-        this.$state.go("main_for_manager.show_detail_sc");
+    showDetailSC(selected_tab_id, sc){
+        this.$state.go("main_for_manager." + selected_tab_id + "_show_detail_sc");
     }
 }
 

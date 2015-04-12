@@ -20,10 +20,18 @@
           }
         }
       });
-      $stateProvider.state("main_for_manager.show_detail_sc", {
+      $stateProvider.state("main_for_manager.new_show_detail_sc", {
         url: "/new/detail",
         views: {
           "tab_new_view": {
+            templateUrl: "app/main_screen/show_detail_sc.html"
+          }
+        }
+      });
+      $stateProvider.state("main_for_manager.approved_show_detail_sc", {
+        url: "/approved/detail",
+        views: {
+          "tab_payment_status_view": {
             templateUrl: "app/main_screen/show_detail_sc.html"
           }
         }

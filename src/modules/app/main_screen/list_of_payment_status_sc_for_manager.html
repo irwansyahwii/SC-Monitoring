@@ -1,5 +1,9 @@
 
-<ion-view view-title="Dashboard">
+<ion-view>
+  <ion-nav-title>Monitoring SC</ion-nav-title>
+  <ion-nav-buttons side="left">
+    <button ng-click="toggleSideMenu()" class="button icon ion-navicon"></button>
+  </ion-nav-buttons>
   <ion-content class="padding">
     <div class="button-bar">
       <div ng-class="{'button-dark': selected_button_bar_id === 'approved'}" ng-click="button_bar_clicked('approved')" class="button">Approved</div>

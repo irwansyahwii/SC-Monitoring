@@ -47,8 +47,8 @@ var RoutingService = (function () {
             this.$state.go("main_for_manager.tab_payment_status_view.gr");
         }
     };
-    RoutingService.prototype.showDetailSC = function (sc) {
-        this.$state.go("main_for_manager.show_detail_sc");
+    RoutingService.prototype.showDetailSC = function (selected_tab_id, sc) {
+        this.$state.go("main_for_manager." + selected_tab_id + "_show_detail_sc");
     };
     return RoutingService;
 })();

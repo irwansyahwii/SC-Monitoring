@@ -32,6 +32,7 @@ class MainForManagerController{
     private RoutingService : RoutingService;
     private $log: ng.ILogService;
     private $ionicSideMenuDelegate:any;
+    private selected_tab_id:string;
 
     constructor($scope: IMainControllerScope, RoutingService: RoutingService, 
         $log: ng.ILogService, $ionicSideMenuDelegate:any) {
@@ -53,12 +54,12 @@ class MainForManagerController{
             this.$log.debug("show_detail_sc called");
             this.$scope.selected_sc = sc;
 
-            RoutingService.showDetailSC(sc);
+            RoutingService.showDetailSC(this.selected_tab_id, sc);
         }
 
         this.$scope.selected_button_bar_id = "approved";
         this.$scope.button_bar_clicked = (button_id) => {
-
+            this.selected_tab_id = button_id;
             this.$scope.selected_button_bar_id = button_id;
             RoutingService.showListView(this.$scope.selected_button_bar_id);
         }        
@@ -70,9 +71,11 @@ class MainForManagerController{
         }
 
         this.$scope.on_tab_new_selected = () => {
+            this.$log.debug("on_tab_new_selected called");
+            this.selected_tab_id = "new";
             this.RoutingService.gotoListOfNewSCScreen();
         }
-        this.$scope.on_tab_payment_status_selected = () => {
+        this.$scope.on_tab_payment_status_selected = () => {            
             this.RoutingService.gotoListOfPaymentStatusScreen();
             this.$scope.button_bar_clicked("approved");
         }
