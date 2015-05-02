@@ -28,6 +28,7 @@ interface IMainControllerScope extends ng.IScope{
     show_tab_rejected_detail_sc(sc:SC);
     new_sc_clicked();
     show_sc_menu(sc);
+    logout();
 }
 
 class MainForManagerController{
@@ -77,9 +78,19 @@ class MainForManagerController{
         this.$scope.current_user = User.current_user;
 
         this.$scope.new_sc_clicked = () => {
-            RoutingService.showNewSCScreen();
+            this.RoutingService.showNewSCScreen();
         }
 
+
+        this.$scope.logout = () => {
+            User.current_user.logout()
+                .then(() => {
+                        this.RoutingService.gotoLoginScreen();
+                    })
+                .catch(() => {
+                        this.RoutingService.gotoLoginScreen();
+                    })
+        }
 
         this.$scope.show_sc_menu = (sc)=>{
             var hideSheet = $ionicActionSheet.show({

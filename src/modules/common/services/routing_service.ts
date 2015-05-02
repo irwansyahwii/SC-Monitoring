@@ -95,6 +95,10 @@ class RoutingService implements IRoutingService {
 
     showEditSCScreen(sc){
     }
+
+    gotoLoginScreen() {
+        this.$state.go("login");
+    }
 }
 
 export = RoutingService;

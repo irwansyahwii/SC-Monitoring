@@ -72,13 +72,13 @@ class User{
     }
 
     logout():ng.IPromise<any> {
-        var deferred:ng.IDeferred<any> = this.$q.defer();
+        console.log("logout called");
+        var deferred:ng.IDeferred<any> = this.$q.defer();        
 
         User.current_user = null;
-
         this.LoginService.logout()
-            .then(() => {
-                    deferred.resolve();
+            .then(() => {                                        
+                    deferred.resolve();                    
                 })
             .catch(() => {
                     deferred.reject();

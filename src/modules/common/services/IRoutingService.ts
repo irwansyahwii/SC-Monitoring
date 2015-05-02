@@ -11,6 +11,7 @@ interface IRoutingService{
     showTabRejectedDetailSC(sc);
     showNewSCScreen();
     showEditSCScreen(sc);
+    gotoLoginScreen();
 }
 
 export = IRoutingService;

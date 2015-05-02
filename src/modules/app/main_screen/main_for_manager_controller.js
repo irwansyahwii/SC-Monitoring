@@ -10,6 +10,15 @@ var MainForManagerController = (function () {
         this.$ionicHistory = $ionicHistory;
         this.$timeout = $timeout;
         this.$scope.current_user = User.current_user;
+        this.$scope.logout = function () {
+            console.log(User.current_user);
+            User.current_user.logout().then(function () {
+                console.log(_this.RoutingService);
+                _this.RoutingService.gotoLoginScreen();
+            }).catch(function () {
+                _this.RoutingService.gotoLoginScreen();
+            });
+        };
         this.$scope.back_button_clicked = function () {
             _this.$log.debug("back_button_clicked called");
             // this.$log.debug(this.$ionicHistory.currentStateName());

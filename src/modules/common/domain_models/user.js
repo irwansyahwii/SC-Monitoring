@@ -69,6 +69,7 @@ var User = (function () {
         this._errors = [];
     };
     User.prototype.logout = function () {
+        console.log("logout called");
         var deferred = this.$q.defer();
         User.current_user = null;
         this.LoginService.logout().then(function () {

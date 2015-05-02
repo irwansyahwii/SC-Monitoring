@@ -66,6 +66,9 @@ var RoutingServiceRouter = (function () {
     RoutingServiceRouter.prototype.showEditSCScreen = function (sc) {
         this.routing_service.showEditSCScreen(sc);
     };
+    RoutingServiceRouter.prototype.gotoLoginScreen = function () {
+        this.routing_service.gotoLoginScreen();
+    };
     return RoutingServiceRouter;
 })();
 module.exports = RoutingServiceRouter;

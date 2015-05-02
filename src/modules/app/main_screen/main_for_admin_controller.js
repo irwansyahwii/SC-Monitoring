@@ -20,7 +20,14 @@ var MainForManagerController = (function () {
         this.$ionicPopup = $ionicPopup;
         this.$scope.current_user = User.current_user;
         this.$scope.new_sc_clicked = function () {
-            RoutingService.showNewSCScreen();
+            _this.RoutingService.showNewSCScreen();
+        };
+        this.$scope.logout = function () {
+            User.current_user.logout().then(function () {
+                _this.RoutingService.gotoLoginScreen();
+            }).catch(function () {
+                _this.RoutingService.gotoLoginScreen();
+            });
         };
         this.$scope.show_sc_menu = function (sc) {
             var hideSheet = $ionicActionSheet.show({

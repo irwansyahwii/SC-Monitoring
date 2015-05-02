@@ -78,6 +78,9 @@ var RoutingService = (function () {
     };
     RoutingService.prototype.showEditSCScreen = function (sc) {
     };
+    RoutingService.prototype.gotoLoginScreen = function () {
+        this.$state.go("login");
+    };
     return RoutingService;
 })();
 module.exports = RoutingService;

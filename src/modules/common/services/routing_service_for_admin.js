@@ -67,6 +67,9 @@ var RoutingService = (function () {
     RoutingService.prototype.showEditSCScreen = function (sc) {
         this.$state.go("main_for_admin.edit_sc", { sc_number: sc.sc_number });
     };
+    RoutingService.prototype.gotoLoginScreen = function () {
+        this.$state.go("login");
+    };
     return RoutingService;
 })();
 module.exports = RoutingService;

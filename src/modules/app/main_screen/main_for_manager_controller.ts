@@ -1,6 +1,6 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 
-import RoutingService = require("../../common/services/routing_service");
+import IRoutingService = require("../../common/services/IRoutingService");
 import User = require("../../common/domain_models/user");
 import SC = require("../../common/domain_models/SC");
 
@@ -20,6 +20,7 @@ interface IMainControllerScope extends ng.IScope{
     show_gr_detail_sc(sc:SC);
     on_tab_rejected_selected();
     show_tab_rejected_detail_sc(sc:SC);
+    logout();
 }
 
 class MainForManagerController{
@@ -35,14 +36,14 @@ class MainForManagerController{
     }
 
     private $scope: IMainControllerScope;
-    private RoutingService : RoutingService;
+    private RoutingService : IRoutingService;
     private $log: ng.ILogService;
     private $ionicSideMenuDelegate:any;
     private selected_tab_id:string;
     private $ionicHistory:any;
     private $timeout:ng.ITimeoutService;
 
-    constructor($scope: IMainControllerScope, RoutingService: RoutingService, 
+    constructor($scope: IMainControllerScope, RoutingService: IRoutingService, 
         $log: ng.ILogService, $ionicSideMenuDelegate:any, $ionicHistory, $timeout: ng.ITimeoutService) {
 
         this.$scope = $scope;
@@ -54,6 +55,20 @@ class MainForManagerController{
 
 
         this.$scope.current_user = User.current_user;
+
+        this.$scope.logout = () => {
+            console.log(User.current_user);
+
+            User.current_user.logout()
+                .then(() => {
+                        console.log(this.RoutingService);
+                        this.RoutingService.gotoLoginScreen();
+                    })
+                .catch(() => {
+                        this.RoutingService.gotoLoginScreen();
+                    })
+        }
+
 
         this.$scope.back_button_clicked = () =>{
             this.$log.debug("back_button_clicked called");

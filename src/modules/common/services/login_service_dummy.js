@@ -40,6 +40,13 @@ var LoginService = (function () {
         }, 1);
         return deferred.promise;
     };
+    LoginService.prototype.logout = function () {
+        var deferred = this.$q.defer();
+        this.$timeout(function () {
+            deferred.resolve(null);
+        }, 1);
+        return deferred.promise;
+    };
     return LoginService;
 })();
 module.exports = LoginService;

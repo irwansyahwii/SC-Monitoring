@@ -1,7 +1,7 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 
 import LoginResult = require("./LoginResult");
-import ILoginService = require("ILoginService");
+import ILoginService = require("./ILoginService");
 import FieldError = require("./FieldError");
 
 class LoginService implements ILoginService {
@@ -52,6 +52,15 @@ class LoginService implements ILoginService {
 
         return deferred.promise;
 
+    }
+    logout():ng.IPromise<any>{
+        var deferred:ng.IDeferred<any> = this.$q.defer();
+
+        this.$timeout(() => {
+                deferred.resolve(null);
+            }, 1);
+
+        return deferred.promise;
     }
 }
 
