@@ -1,0 +1,19 @@
+
+<ion-view>
+  <ion-nav-title>Monitoring SC</ion-nav-title>
+  <ion-nav-buttons side="left">
+    <button ng-click="toggleSideMenu()" class="button icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button ng-click="toggleSideMenu()" class="button icon ion-plus"></button>
+  </ion-nav-buttons>
+  <ion-content class="padding">
+    <ion-list>
+      <ion-item ng-click="show_tab_new_detail_sc(sc)" ng-repeat="sc in current_user.data.list_of_new_sc | orderBy:'+created_date'" class="item-icon-right">
+        <div>{{sc.sc_number}}</div>
+        <div>{{sc.project_name}}</div>
+        <div>{{to_moment(sc.created_date)}}</div><i class="icon ion-chevron-right"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -3,8 +3,8 @@ var UserDataResult = require("../services/UserDataResult");
 var _current_user = null;
 var User = (function () {
     function User($log, $q, $timeout, LoginService, UserDataInitializer) {
-        this._username = "manager";
-        this._password = "manager";
+        this._username = "admin";
+        this._password = "admin";
         this._errors = new Array();
         this._roles = new Array();
         this._data = new UserDataResult();

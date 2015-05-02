@@ -1,0 +1,26 @@
+
+<ion-nav-bar class="bar-positive">
+  <ion-nav-back-button ng-click="back_button_clicked()"></ion-nav-back-button>
+</ion-nav-bar>
+<ion-side-menus>
+  <ion-side-menu side="left">
+    <ion-content>
+      <ion-list>
+        <ion-item>Logout</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+  <ion-side-menu-content>
+    <ion-tabs class="tabs-icon-top tabs-positive">
+      <ion-tab on-select="on_tab_new_selected()" title="New" icon-off="ion-ios-filing-outline" icon-on="ion-ios-filing">       
+        <ion-nav-view name="tab_new_view"></ion-nav-view>
+      </ion-tab>
+      <ion-tab on-select="on_tab_payment_status_selected()" title="Payment Status" icon-off="ion-ios-box-outline" icon-on="ion-ios-box">
+        <ion-nav-view name="tab_payment_status_view"></ion-nav-view>
+      </ion-tab>
+      <ion-tab on-select="on_tab_rejected_selected()" title="Rejected" icon-off="ion-ios-analytics-outline" icon-on="ion-ios-analytics">
+        <ion-nav-view name="tab_rejected"></ion-nav-view>
+      </ion-tab>
+    </ion-tabs>
+  </ion-side-menu-content>
+</ion-side-menus>

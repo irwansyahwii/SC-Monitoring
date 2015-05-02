@@ -16,8 +16,8 @@ class User{
     private LoginService: ILoginService;
     private UserDataInitializer: IUserDataInitializer;
 
-    private _username:string = "manager";
-    private _password:string = "manager";
+    private _username:string = "admin";
+    private _password:string = "admin";
     private _errors: FieldError[] = new Array<FieldError>();
     private _roles: string[] = new Array<string>();
     private _data: UserDataResult = new UserDataResult();

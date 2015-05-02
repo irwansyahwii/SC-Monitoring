@@ -1,5 +1,4 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
-var User = require("../domain_models/User");
 var RoutingService = (function () {
     function RoutingService($state, $log) {
         this.$log = $log;
@@ -16,23 +15,11 @@ var RoutingService = (function () {
         enumerable: true,
         configurable: true
     });
-    RoutingService.prototype.role_is_manager = function () {
-        return User.current_user.roles[0] === "manager";
-    };
     RoutingService.prototype.gotoMainScreen = function () {
-        this.$log.debug("RoutingService.gotoMainScreen() executing...");
-        this.$log.debug(User.current_user);
-        this.$log.debug("User.current_user.roles[0]: ", User.current_user.roles[0]);
-        if (this.role_is_manager) {
-            this.$state.go("main_for_manager");
-        }
-        else {
-            this.$state.go("main_for_admin");
-        }
+        this.$state.go("main_for_admin");
     };
     RoutingService.prototype.gotoListOfNewSCScreen = function () {
-        this.$log.debug("RoutingService.gotoListOfNewSCScreen() executing...");
-        this.$state.go("main_for_manager.tab_new_view");
+        this.$state.go("main_for_admin.tab_new_view");
     };
     RoutingService.prototype.gotoListOfPaymentStatusScreen = function () {
         this.$log.debug("RoutingService.gotoListOfPaymentStatusScreen() executing...");

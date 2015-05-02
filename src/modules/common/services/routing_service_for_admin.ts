@@ -1,9 +1,8 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 
 import User = require("../domain_models/User");
-import IRoutingService = require("./IRoutingService");
 
-class RoutingService implements IRoutingService {
+class RoutingService {
     static get factory() : any[] {
         var result = ["$state", "$log", 
             ($state, $log) => {
@@ -23,26 +22,13 @@ class RoutingService implements IRoutingService {
         this.$state = $state;
     }
 
-    role_is_manager():boolean{
-        return User.current_user.roles[0] === "manager";
-    }
-
-    gotoMainScreen() {
-        this.$log.debug("RoutingService.gotoMainScreen() executing...");
-        this.$log.debug(User.current_user);
-        this.$log.debug("User.current_user.roles[0]: ", User.current_user.roles[0]);
-        if (this.role_is_manager){
-            this.$state.go("main_for_manager");    
-        }
-        else{
-            this.$state.go("main_for_admin");    
-        }
+    gotoMainScreen() {            
+        this.$state.go("main_for_admin");    
         
     }
 
     gotoListOfNewSCScreen() {
-        this.$log.debug("RoutingService.gotoListOfNewSCScreen() executing...");
-        this.$state.go("main_for_manager.tab_new_view");
+        this.$state.go("main_for_admin.tab_new_view");
     }
     gotoListOfPaymentStatusScreen() {
         this.$log.debug("RoutingService.gotoListOfPaymentStatusScreen() executing...");
