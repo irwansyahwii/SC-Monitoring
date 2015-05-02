@@ -212,11 +212,17 @@ class UserDataInitializer implements IUserDataInitializer{
                 else{
                     result.roles = ["admin"];
                 }
-                result.list_of_new_sc = this.create_list_of_new_sc();
-                result.list_of_approved_sc = this.create_list_of_approved_sc();
-                result.list_of_po_sc = this.create_list_of_po_sc();
-                result.list_of_gr_sc = this.create_list_of_gr_sc();
-                result.list_of_rejected_sc = this.create_list_of_rejected_sc();
+                // result.list_of_new_sc = this.create_list_of_new_sc();
+                // result.list_of_approved_sc = this.create_list_of_approved_sc();
+                // result.list_of_po_sc = this.create_list_of_po_sc();
+                // result.list_of_gr_sc = this.create_list_of_gr_sc();
+                // result.list_of_rejected_sc = this.create_list_of_rejected_sc();
+
+                result.list_of_new_sc = [];
+                result.list_of_approved_sc = [];
+                result.list_of_po_sc = [];
+                result.list_of_gr_sc = [];
+                result.list_of_rejected_sc = [];
 
                 deferred.resolve(result);
             }, 1);        

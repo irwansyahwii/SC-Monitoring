@@ -153,7 +153,6 @@ var UserDataInitializer = (function () {
         return result;
     };
     UserDataInitializer.prototype.retrieve_user_data = function (username) {
-        var _this = this;
         var deferred = this.$q.defer();
         var result = new UserDataResult();
         this.$timeout(function () {
@@ -163,11 +162,16 @@ var UserDataInitializer = (function () {
             else {
                 result.roles = ["admin"];
             }
-            result.list_of_new_sc = _this.create_list_of_new_sc();
-            result.list_of_approved_sc = _this.create_list_of_approved_sc();
-            result.list_of_po_sc = _this.create_list_of_po_sc();
-            result.list_of_gr_sc = _this.create_list_of_gr_sc();
-            result.list_of_rejected_sc = _this.create_list_of_rejected_sc();
+            // result.list_of_new_sc = this.create_list_of_new_sc();
+            // result.list_of_approved_sc = this.create_list_of_approved_sc();
+            // result.list_of_po_sc = this.create_list_of_po_sc();
+            // result.list_of_gr_sc = this.create_list_of_gr_sc();
+            // result.list_of_rejected_sc = this.create_list_of_rejected_sc();
+            result.list_of_new_sc = [];
+            result.list_of_approved_sc = [];
+            result.list_of_po_sc = [];
+            result.list_of_gr_sc = [];
+            result.list_of_rejected_sc = [];
             deferred.resolve(result);
         }, 1);
         return deferred.promise;

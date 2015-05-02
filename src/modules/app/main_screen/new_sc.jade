@@ -25,13 +25,13 @@ ion-view
                                 option EUR
                     label.item.item-input.item-stacked-label
                         span.input-label Nilai SC
-                        input(ng-model="user.sc_value" type="text" placeholder="")        
+                        input(ng-model="new_sc.sc_value" type="text" placeholder="")        
                     label.item.item-input.item-stacked-label
                         span.input-label Quantity
-                        input(ng-model="user.quantity" type="text" placeholder="")        
+                        input(ng-model="new_sc.quantity" type="text" placeholder="")        
                     label.item.item-input.item-stacked-label
                         span.input-label Tanggal Create SC
-                        input(ng-model="user.created_date" type="text" placeholder="")        
+                        input(ng-model="new_sc.created_date" type="text" placeholder="")        
                     label.item.item-input.item-select
                         div.input-label Cost Center
                             select(ng-model="new_sc.cost_center")
@@ -43,12 +43,12 @@ ion-view
                                 option 050000
                     label.item.item-input.item-stacked-label
                         span.input-label GL Account
-                        input(ng-model="user.gl_account" type="text" placeholder="")        
+                        input(ng-model="new_sc.gl_account" type="text" placeholder="")        
                     label.item.item-input.item-stacked-label
                         span.input-label Business Area
-                        input(ng-model="user.business_area" type="text" placeholder="")        
+                        input(ng-model="new_sc.business_area" type="text" placeholder="")        
                     label.item.item-input.item-stacked-label
                         span.input-label Vendor
-                        input(ng-model="user.vendor" type="text" placeholder="")        
+                        input(ng-model="new_sc.vendor" type="text" placeholder="")        
                     div.item
                         button.button.button-block.button-positive(ng-click="save()") Save

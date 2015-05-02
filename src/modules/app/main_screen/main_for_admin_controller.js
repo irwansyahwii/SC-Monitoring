@@ -34,6 +34,23 @@ var MainForManagerController = (function () {
                 cancelText: 'Cancel',
                 buttonClicked: function (index) {
                     console.log("index: %d", index);
+                    switch (index) {
+                        case 0 /* EDIT */: {
+                            _this.RoutingService.showEditSCScreen(sc);
+                            break;
+                        }
+                        case 1 /* APPROVE */: {
+                            alert('approve');
+                            break;
+                        }
+                        case 2 /* REJECT */: {
+                            alert('reject');
+                            break;
+                        }
+                        default: {
+                            console.log("Unknown button");
+                        }
+                    }
                 },
                 destructiveButtonClicked: function () {
                     hideSheet();
@@ -163,6 +180,8 @@ var MainForManagerController = (function () {
         enumerable: true,
         configurable: true
     });
+    MainForManagerController.prototype.edit = function (sc) {
+    };
     return MainForManagerController;
 })();
 module.exports = MainForManagerController;

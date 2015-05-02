@@ -10,7 +10,7 @@ interface IRoutingService{
     gotoListOfRejectedScreen();
     showTabRejectedDetailSC(sc);
     showNewSCScreen();
-    
+    showEditSCScreen(sc);
 }
 
 export = IRoutingService;

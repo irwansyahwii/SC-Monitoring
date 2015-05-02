@@ -2,11 +2,7 @@
 
 import SC = require("../../common/domain_models/SC");
 import User = require("../../common/domain_models/user");
-
-interface INewSCControllerScope{
-    save():void;
-    new_sc: SC;
-}
+import INewSCControllerScope = require("./INewSCControllerScope");
 
 
 class NewSCController{
@@ -21,13 +17,13 @@ class NewSCController{
         return arr;
     }
 
-    private $scope: INewSCControllerScope;
-    private $log: ng.ILogService;
-    private $ionicSideMenuDelegate:any;
-    private selected_tab_id:string;
-    private $ionicHistory:any;
-    private $timeout:ng.ITimeoutService;
-    private $ionicPopup;
+    protected $scope: INewSCControllerScope;
+    protected $log: ng.ILogService;
+    protected $ionicSideMenuDelegate:any;
+    protected selected_tab_id:string;
+    protected $ionicHistory:any;
+    protected $timeout:ng.ITimeoutService;
+    protected $ionicPopup;
 
     constructor($scope: INewSCControllerScope, 
         $log: ng.ILogService, $ionicSideMenuDelegate:any, $ionicHistory, $timeout: ng.ITimeoutService

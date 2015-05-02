@@ -55,6 +55,10 @@ class MainForManagerController{
     private $ionicActionSheet;
     private $ionicPopup;
 
+    edit(sc){
+
+    }
+
     constructor($scope: IMainControllerScope, RoutingService: IRoutingService, 
         $log: ng.ILogService, $ionicSideMenuDelegate:any, $ionicHistory, $timeout: ng.ITimeoutService
         , $ionicActionSheet, $ionicPopup) {
@@ -89,6 +93,26 @@ class MainForManagerController{
                     , cancelText: 'Cancel'
                     , buttonClicked: (index) => {
                         console.log("index: %d", index);
+
+                        switch (index)
+                        {
+                            case SC_MENU_BUTTONS.EDIT: {                                
+                                this.RoutingService.showEditSCScreen(sc);
+                                break;
+                            }
+                            case SC_MENU_BUTTONS.APPROVE: {
+                                alert('approve');
+                                break;
+                            }
+                            case SC_MENU_BUTTONS.REJECT: {
+                                alert('reject');
+                                break;
+                            }                            
+                            default: {
+                                
+                                console.log("Unknown button");
+                            }
+                        }
                     }
                     , destructiveButtonClicked: ()=>{
 

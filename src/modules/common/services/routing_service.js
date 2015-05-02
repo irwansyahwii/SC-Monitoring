@@ -76,6 +76,8 @@ var RoutingService = (function () {
     };
     RoutingService.prototype.showNewSCScreen = function () {
     };
+    RoutingService.prototype.showEditSCScreen = function (sc) {
+    };
     return RoutingService;
 })();
 module.exports = RoutingService;

@@ -81,6 +81,10 @@ class RoutingServiceRouter implements IRoutingService {
         this.routing_service.showNewSCScreen();
     }
 
+    showEditSCScreen(sc){
+        this.routing_service.showEditSCScreen(sc);
+    }
+
 }
 
 export = RoutingServiceRouter;

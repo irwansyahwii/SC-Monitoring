@@ -89,6 +89,13 @@ setup_routes_for_admin = ($stateProvider) ->
                 templateUrl: "app/main_screen/new_sc.html"   
                 controller: "NewSCController"
 
+    $stateProvider.state "main_for_admin.edit_sc",
+        url:"/edit_sc/:sc_number"
+        views:
+            "tab_new_view":
+                templateUrl: "app/main_screen/new_sc.html"   
+                controller: "EditSCController"
+
 the_module.config(["$stateProvider",
         ($stateProvider) ->
             
@@ -103,9 +110,11 @@ the_module.config(["$stateProvider",
 main_for_manager_controller = require("./main_for_manager_controller")
 main_for_admin_controller = require("./main_for_admin_controller")
 new_sc_controller = require("./new_sc_controller")
+edit_sc_controller = require("./edit_sc_controller");
 
 the_module.controller("MainForManagerController", main_for_manager_controller.factory)
 the_module.controller("MainForAdminController", main_for_admin_controller.factory)
 the_module.controller("NewSCController", new_sc_controller.factory)
+the_module.controller("EditSCController", edit_sc_controller.factory)
 
 module.exports = the_module

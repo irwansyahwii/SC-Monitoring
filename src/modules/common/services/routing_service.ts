@@ -93,6 +93,8 @@ class RoutingService implements IRoutingService {
         
     }
 
+    showEditSCScreen(sc){
+    }
 }
 
 export = RoutingService;
