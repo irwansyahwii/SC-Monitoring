@@ -1,6 +1,7 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 var UserDataResult = require("./UserDataResult");
 var SC = require("../domain_models/SC");
+var _cache_result = null;
 var UserDataInitializer = (function () {
     function UserDataInitializer($q, $timeout, $log) {
         this.$q = $q;
@@ -153,26 +154,25 @@ var UserDataInitializer = (function () {
         return result;
     };
     UserDataInitializer.prototype.retrieve_user_data = function (username) {
+        var _this = this;
         var deferred = this.$q.defer();
         var result = new UserDataResult();
         this.$timeout(function () {
+            if (_cache_result === null) {
+                _cache_result = new UserDataResult();
+            }
             if (username === "manager") {
-                result.roles = ["manager"];
+                _cache_result.roles = ["manager"];
             }
             else {
-                result.roles = ["admin"];
+                _cache_result.roles = ["admin"];
             }
             // result.list_of_new_sc = this.create_list_of_new_sc();
-            // result.list_of_approved_sc = this.create_list_of_approved_sc();
-            // result.list_of_po_sc = this.create_list_of_po_sc();
-            // result.list_of_gr_sc = this.create_list_of_gr_sc();
-            // result.list_of_rejected_sc = this.create_list_of_rejected_sc();
-            result.list_of_new_sc = [];
-            result.list_of_approved_sc = [];
-            result.list_of_po_sc = [];
-            result.list_of_gr_sc = [];
-            result.list_of_rejected_sc = [];
-            deferred.resolve(result);
+            _cache_result.list_of_approved_sc = _this.create_list_of_approved_sc();
+            _cache_result.list_of_po_sc = _this.create_list_of_po_sc();
+            _cache_result.list_of_gr_sc = _this.create_list_of_gr_sc();
+            _cache_result.list_of_rejected_sc = _this.create_list_of_rejected_sc();
+            deferred.resolve(_cache_result);
         }, 1);
         return deferred.promise;
     };

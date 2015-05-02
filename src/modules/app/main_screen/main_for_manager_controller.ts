@@ -158,7 +158,7 @@ class MainForManagerController{
         }        
 
         this.$scope.to_moment = (dt) => {            
-            var result = moment(dt, "DD/MM/YYYY").fromNow();
+            var result = moment(dt).fromNow();
 
             return result;
         }

@@ -241,8 +241,8 @@ class MainForManagerController{
             RoutingService.showPaymentStatusListView(this.$scope.selected_button_bar_id);
         }        
 
-        this.$scope.to_moment = (dt) => {            
-            var result = moment(dt, "DD/MM/YYYY").fromNow();
+        this.$scope.to_moment = (dt) => {     
+            var result = moment(dt).fromNow();
 
             return result;
         }

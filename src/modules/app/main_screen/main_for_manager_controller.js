@@ -86,7 +86,7 @@ var MainForManagerController = (function () {
             RoutingService.showPaymentStatusListView(_this.$scope.selected_button_bar_id);
         };
         this.$scope.to_moment = function (dt) {
-            var result = moment(dt, "DD/MM/YYYY").fromNow();
+            var result = moment(dt).fromNow();
             return result;
         };
         this.$scope.on_tab_new_selected = function () {
