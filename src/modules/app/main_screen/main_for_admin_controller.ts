@@ -4,6 +4,12 @@ import IRoutingService = require("../../common/services/IRoutingService");
 import User = require("../../common/domain_models/user");
 import SC = require("../../common/domain_models/SC");
 
+enum SC_MENU_BUTTONS{
+    EDIT = 0
+    , APPROVE = 1
+    , REJECT = 2            
+}
+
 interface IMainControllerScope extends ng.IScope{
     current_user: User;    
     on_tab_new_selected();
@@ -21,13 +27,17 @@ interface IMainControllerScope extends ng.IScope{
     on_tab_rejected_selected();
     show_tab_rejected_detail_sc(sc:SC);
     new_sc_clicked();
+    show_sc_menu(sc);
 }
 
 class MainForManagerController{
     static get factory(): any[] {
-        var arr = ["$scope", "RoutingService", "$log", "$ionicSideMenuDelegate", "$ionicHistory", "$timeout",
-            ($scope, RoutingService, $log, $ionicSideMenuDelegate, $ionicHistory, $timeout) =>{
-                var controller = new MainForManagerController($scope, RoutingService, $log, $ionicSideMenuDelegate, $ionicHistory, $timeout);
+        var arr = ["$scope", "RoutingService", "$log", "$ionicSideMenuDelegate", "$ionicHistory", "$timeout"
+            , "$ionicActionSheet", "$ionicPopup",
+            ($scope, RoutingService, $log, $ionicSideMenuDelegate, $ionicHistory, $timeout
+                , $ionicActionSheet, $ionicPopup) =>{
+                var controller = new MainForManagerController($scope, RoutingService, $log
+                    , $ionicSideMenuDelegate, $ionicHistory, $timeout, $ionicActionSheet, $ionicPopup);
 
                 return controller;
             }];
@@ -42,9 +52,12 @@ class MainForManagerController{
     private selected_tab_id:string;
     private $ionicHistory:any;
     private $timeout:ng.ITimeoutService;
+    private $ionicActionSheet;
+    private $ionicPopup;
 
     constructor($scope: IMainControllerScope, RoutingService: IRoutingService, 
-        $log: ng.ILogService, $ionicSideMenuDelegate:any, $ionicHistory, $timeout: ng.ITimeoutService) {
+        $log: ng.ILogService, $ionicSideMenuDelegate:any, $ionicHistory, $timeout: ng.ITimeoutService
+        , $ionicActionSheet, $ionicPopup) {
 
         this.$scope = $scope;
         this.RoutingService = RoutingService;
@@ -52,12 +65,58 @@ class MainForManagerController{
         this.$ionicSideMenuDelegate = $ionicSideMenuDelegate;
         this.$ionicHistory = $ionicHistory;
         this.$timeout = $timeout;
+        this.$ionicActionSheet = $ionicActionSheet;
+        this.$timeout = $timeout;
+        this.$ionicPopup = $ionicPopup;
 
 
         this.$scope.current_user = User.current_user;
 
         this.$scope.new_sc_clicked = () => {
             RoutingService.showNewSCScreen();
+        }
+
+
+        this.$scope.show_sc_menu = (sc)=>{
+            var hideSheet = $ionicActionSheet.show({
+                    buttons: [
+                        {text: 'Edit'}
+                        , {text: 'Approve'}
+                        , {text: 'Reject'}
+                    ]
+                    , destructiveText: 'Hapus'
+                    , titleText: 'Menu'
+                    , cancelText: 'Cancel'
+                    , buttonClicked: (index) => {
+                        console.log("index: %d", index);
+                    }
+                    , destructiveButtonClicked: ()=>{
+
+                        hideSheet();
+                        var confirmPopup = this.$ionicPopup.confirm({
+                                title: 'SC Monitoring'
+                                , template: "Hapus SC dengan nomor:" + sc.sc_number
+                            })
+
+                        confirmPopup.then((is_ok) => {
+                                if(is_ok){
+                                    var found_index = -1;
+                                    User.current_user.data.list_of_new_sc.forEach((item, index) =>{
+                                            if(item.sc_number === sc.sc_number){
+                                                found_index = index;
+                                            }
+                                        })
+
+                                    if(found_index !== -1){
+                                        User.current_user.data.list_of_new_sc.splice(found_index, 1);
+                                    }
+
+                                }
+                            })
+
+                    }
+                });
+
         }
 
         this.$scope.back_button_clicked = () =>{

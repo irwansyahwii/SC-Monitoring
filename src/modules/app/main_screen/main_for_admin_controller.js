@@ -1,7 +1,13 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 var User = require("../../common/domain_models/user");
+var SC_MENU_BUTTONS;
+(function (SC_MENU_BUTTONS) {
+    SC_MENU_BUTTONS[SC_MENU_BUTTONS["EDIT"] = 0] = "EDIT";
+    SC_MENU_BUTTONS[SC_MENU_BUTTONS["APPROVE"] = 1] = "APPROVE";
+    SC_MENU_BUTTONS[SC_MENU_BUTTONS["REJECT"] = 2] = "REJECT";
+})(SC_MENU_BUTTONS || (SC_MENU_BUTTONS = {}));
 var MainForManagerController = (function () {
-    function MainForManagerController($scope, RoutingService, $log, $ionicSideMenuDelegate, $ionicHistory, $timeout) {
+    function MainForManagerController($scope, RoutingService, $log, $ionicSideMenuDelegate, $ionicHistory, $timeout, $ionicActionSheet, $ionicPopup) {
         var _this = this;
         this.$scope = $scope;
         this.RoutingService = RoutingService;
@@ -9,9 +15,47 @@ var MainForManagerController = (function () {
         this.$ionicSideMenuDelegate = $ionicSideMenuDelegate;
         this.$ionicHistory = $ionicHistory;
         this.$timeout = $timeout;
+        this.$ionicActionSheet = $ionicActionSheet;
+        this.$timeout = $timeout;
+        this.$ionicPopup = $ionicPopup;
         this.$scope.current_user = User.current_user;
         this.$scope.new_sc_clicked = function () {
             RoutingService.showNewSCScreen();
+        };
+        this.$scope.show_sc_menu = function (sc) {
+            var hideSheet = $ionicActionSheet.show({
+                buttons: [
+                    { text: 'Edit' },
+                    { text: 'Approve' },
+                    { text: 'Reject' }
+                ],
+                destructiveText: 'Hapus',
+                titleText: 'Menu',
+                cancelText: 'Cancel',
+                buttonClicked: function (index) {
+                    console.log("index: %d", index);
+                },
+                destructiveButtonClicked: function () {
+                    hideSheet();
+                    var confirmPopup = _this.$ionicPopup.confirm({
+                        title: 'SC Monitoring',
+                        template: "Hapus SC dengan nomor:" + sc.sc_number
+                    });
+                    confirmPopup.then(function (is_ok) {
+                        if (is_ok) {
+                            var found_index = -1;
+                            User.current_user.data.list_of_new_sc.forEach(function (item, index) {
+                                if (item.sc_number === sc.sc_number) {
+                                    found_index = index;
+                                }
+                            });
+                            if (found_index !== -1) {
+                                User.current_user.data.list_of_new_sc.splice(found_index, 1);
+                            }
+                        }
+                    });
+                }
+            });
         };
         this.$scope.back_button_clicked = function () {
             _this.$log.debug("back_button_clicked called");
@@ -110,8 +154,8 @@ var MainForManagerController = (function () {
     }
     Object.defineProperty(MainForManagerController, "factory", {
         get: function () {
-            var arr = ["$scope", "RoutingService", "$log", "$ionicSideMenuDelegate", "$ionicHistory", "$timeout", function ($scope, RoutingService, $log, $ionicSideMenuDelegate, $ionicHistory, $timeout) {
-                var controller = new MainForManagerController($scope, RoutingService, $log, $ionicSideMenuDelegate, $ionicHistory, $timeout);
+            var arr = ["$scope", "RoutingService", "$log", "$ionicSideMenuDelegate", "$ionicHistory", "$timeout", "$ionicActionSheet", "$ionicPopup", function ($scope, RoutingService, $log, $ionicSideMenuDelegate, $ionicHistory, $timeout, $ionicActionSheet, $ionicPopup) {
+                var controller = new MainForManagerController($scope, RoutingService, $log, $ionicSideMenuDelegate, $ionicHistory, $timeout, $ionicActionSheet, $ionicPopup);
                 return controller;
             }];
             return arr;
