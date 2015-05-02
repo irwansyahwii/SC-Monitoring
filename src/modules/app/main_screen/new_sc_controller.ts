@@ -44,8 +44,8 @@ class NewSCController{
             User.current_user.data.list_of_new_sc.push(this.$scope.new_sc);
 
             var messagePopup = this.$ionicPopup.alert({
-                    template: "SC Monitoring"
-                    , title: "New SC saved"
+                    title: "SC Monitoring"
+                    , template: "New SC saved"
                     
                 })
 

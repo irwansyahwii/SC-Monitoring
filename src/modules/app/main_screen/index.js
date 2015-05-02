@@ -123,12 +123,61 @@
         }
       }
     });
-    return $stateProvider.state("main_for_admin.edit_sc", {
+    $stateProvider.state("main_for_admin.edit_sc", {
       url: "/edit_sc/:sc_number",
       views: {
         "tab_new_view": {
-          templateUrl: "app/main_screen/new_sc.html",
+          templateUrl: "app/main_screen/edit_sc.html",
           controller: "EditSCController"
+        }
+      }
+    });
+    $stateProvider.state("main_for_admin.approve_sc", {
+      url: "/edit_sc/:sc_number",
+      views: {
+        "tab_new_view": {
+          templateUrl: "app/main_screen/approve_sc.html",
+          controller: "EditSCController"
+        }
+      }
+    });
+    $stateProvider.state("main_for_admin.tab_payment_status_view", {
+      url: "/payment_status",
+      views: {
+        "tab_payment_status_view": {
+          templateUrl: "app/main_screen/list_of_payment_status_sc_for_manager.html"
+        }
+      }
+    });
+    $stateProvider.state("main_for_admin.tab_payment_status_view.approved", {
+      url: "/approved",
+      views: {
+        "list_view": {
+          templateUrl: "app/main_screen/approved_list_view.html"
+        }
+      }
+    });
+    $stateProvider.state("main_for_admin.tab_payment_status_view.po", {
+      url: "/po",
+      views: {
+        "list_view": {
+          templateUrl: "app/main_screen/po_list_view.html"
+        }
+      }
+    });
+    $stateProvider.state("main_for_admin.tab_payment_status_view.gr", {
+      url: "/gr",
+      views: {
+        "list_view": {
+          templateUrl: "app/main_screen/gr_list_view.html"
+        }
+      }
+    });
+    return $stateProvider.state("main_for_admin.tab_rejected_view", {
+      url: "/rejected",
+      views: {
+        "tab_rejected": {
+          templateUrl: "app/main_screen/list_of_rejected_sc_for_manager.html"
         }
       }
     });

@@ -24,8 +24,8 @@ var EditSCController = (function (_super) {
         this.$scope.save = function () {
             // User.current_user.data.list_of_new_sc.push(this.$scope.new_sc);
             var messagePopup = _this.$ionicPopup.alert({
-                template: "SC Monitoring",
-                title: "New SC saved"
+                template: "Edit SC saved",
+                title: "SC Monitoring"
             });
             messagePopup.then(function () {
                 _this.$ionicHistory.goBack();

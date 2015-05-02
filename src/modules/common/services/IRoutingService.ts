@@ -12,6 +12,7 @@ interface IRoutingService{
     showNewSCScreen();
     showEditSCScreen(sc);
     gotoLoginScreen();
+    showApproveSCScreen(sc);
 }
 
 export = IRoutingService;

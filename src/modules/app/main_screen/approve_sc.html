@@ -1,0 +1,26 @@
+
+<ion-view>
+  <ion-content class="padding">
+    <ion-list>
+      <form>
+        <div class="list">       
+          <label class="item item-input item-stacked-label"><span class="input-label">Nomor SC</span>
+            <input ng-model="new_sc.sc_number" type="text" placeholder="" ng-disabled="true"/>
+          </label>
+          <label class="item item-input item-stacked-label"><span class="input-label">Nama Project</span>
+            <input ng-model="new_sc.project_name" type="text" placeholder="" ng-disabled="true"/>
+          </label>
+          <label class="item item-input item-stacked-label"><span class="input-label">Tanggal Create SC</span>
+            <input ng-model="new_sc.created_date" type="date" placeholder="" ng-disabled="true"/>
+          </label>
+          <label class="item item-input item-stacked-label"><span class="input-label">Tanggal Fully Approve SC</span>
+            <input ng-model="new_sc.fully_approved_date" type="date" placeholder=""/>
+          </label>
+          <div class="item">
+            <button ng-click="save()" class="button button-block button-positive">Save</button>
+          </div>
+        </div>
+      </form>
+    </ion-list>
+  </ion-content>
+</ion-view>

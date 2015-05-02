@@ -1,0 +1,21 @@
+
+ion-view
+    ion-content.padding
+        ion-list
+            form
+                div.list        
+                    label.item.item-input.item-stacked-label
+                        span.input-label Nomor SC
+                        input(ng-model="new_sc.sc_number" type="text" placeholder="", ng-disabled="true")
+                    label.item.item-input.item-stacked-label
+                        span.input-label Nama Project
+                        input(ng-model="new_sc.project_name" type="text" placeholder="", ng-disabled="true")        
+
+                    label.item.item-input.item-stacked-label
+                        span.input-label Tanggal Create SC
+                        input(ng-model="new_sc.created_date" type="date" placeholder="", ng-disabled="true")        
+                    label.item.item-input.item-stacked-label
+                        span.input-label Tanggal Fully Approve SC
+                        input(ng-model="new_sc.fully_approved_date" type="date" placeholder="")        
+                    div.item
+                        button.button.button-block.button-positive(ng-click="save()") Save

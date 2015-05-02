@@ -47,7 +47,7 @@ var MainForManagerController = (function () {
                             break;
                         }
                         case 1 /* APPROVE */: {
-                            alert('approve');
+                            _this.RoutingService.showApproveSCScreen(sc);
                             break;
                         }
                         case 2 /* REJECT */: {

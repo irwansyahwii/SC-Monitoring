@@ -112,7 +112,7 @@ class MainForManagerController{
                                 break;
                             }
                             case SC_MENU_BUTTONS.APPROVE: {
-                                alert('approve');
+                                this.RoutingService.showApproveSCScreen(sc);
                                 break;
                             }
                             case SC_MENU_BUTTONS.REJECT: {
