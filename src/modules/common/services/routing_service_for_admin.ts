@@ -75,6 +75,9 @@ class RoutingService {
         this.$state.go("main_for_manager.rejected_show_detail_sc");                        
     }
 
+    showNewSCScreen(){
+        this.$state.go("main_for_admin.new_sc");
+    }
 }
 
 export = RoutingService;

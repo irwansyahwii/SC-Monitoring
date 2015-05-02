@@ -60,6 +60,9 @@ var RoutingServiceRouter = (function () {
     RoutingServiceRouter.prototype.showTabRejectedDetailSC = function (sc) {
         this.routing_service.showTabRejectedDetailSC(sc);
     };
+    RoutingServiceRouter.prototype.showNewSCScreen = function () {
+        this.routing_service.showNewSCScreen();
+    };
     return RoutingServiceRouter;
 })();
 module.exports = RoutingServiceRouter;

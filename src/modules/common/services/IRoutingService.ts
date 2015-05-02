@@ -9,6 +9,7 @@ interface IRoutingService{
     showTabPaymentStatusGRDetailSC(sc);
     gotoListOfRejectedScreen();
     showTabRejectedDetailSC(sc);
+    showNewSCScreen();
 }
 
 export = IRoutingService;

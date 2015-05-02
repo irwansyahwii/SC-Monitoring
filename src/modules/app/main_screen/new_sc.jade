@@ -1,0 +1,54 @@
+
+ion-view
+    ion-content.padding
+        ion-list
+            form
+                div.list        
+                    label.item.item-input.item-stacked-label
+                        span.input-label Nomor SC
+                        input(ng-model="new_sc.sc_number" type="text" placeholder="")
+                    label.item.item-input.item-stacked-label
+                        span.input-label Nama Project
+                        input(ng-model="new_sc.project_name" type="text" placeholder="")        
+
+                    label.item.item-input.item-select
+                        div.input-label Nama PM
+                            select(ng-model="new_sc.pm_name")
+                                option A
+                                option B
+                                option C
+                    label.item.item-input.item-select
+                        div.input-label Currency
+                            select(ng-model="new_sc.currency")
+                                option IDR
+                                option USD
+                                option EUR
+                    label.item.item-input.item-stacked-label
+                        span.input-label Nilai SC
+                        input(ng-model="user.sc_value" type="text" placeholder="")        
+                    label.item.item-input.item-stacked-label
+                        span.input-label Quantity
+                        input(ng-model="user.quantity" type="text" placeholder="")        
+                    label.item.item-input.item-stacked-label
+                        span.input-label Tanggal Create SC
+                        input(ng-model="user.created_date" type="text" placeholder="")        
+                    label.item.item-input.item-select
+                        div.input-label Cost Center
+                            select(ng-model="new_sc.cost_center")
+                                option C63CU
+                                option 010000
+                                option 020000
+                                option 030000
+                                option 040000
+                                option 050000
+                    label.item.item-input.item-stacked-label
+                        span.input-label GL Account
+                        input(ng-model="user.gl_account" type="text" placeholder="")        
+                    label.item.item-input.item-stacked-label
+                        span.input-label Business Area
+                        input(ng-model="user.business_area" type="text" placeholder="")        
+                    label.item.item-input.item-stacked-label
+                        span.input-label Vendor
+                        input(ng-model="user.vendor" type="text" placeholder="")        
+                    div.item
+                        button.button.button-block.button-positive(ng-click="save()") Save

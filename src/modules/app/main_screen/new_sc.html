@@ -1,0 +1,68 @@
+
+<ion-view>
+  <ion-content class="padding">
+    <ion-list>
+      <form>
+        <div class="list">       
+          <label class="item item-input item-stacked-label"><span class="input-label">Nomor SC</span>
+            <input ng-model="new_sc.sc_number" type="text" placeholder=""/>
+          </label>
+          <label class="item item-input item-stacked-label"><span class="input-label">Nama Project</span>
+            <input ng-model="new_sc.project_name" type="text" placeholder=""/>
+          </label>
+          <label class="item item-input item-select">
+            <div class="input-label">Nama PM
+              <select ng-model="new_sc.pm_name">
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+              </select>
+            </div>
+          </label>
+          <label class="item item-input item-select">
+            <div class="input-label">Currency
+              <select ng-model="new_sc.currency">
+                <option>IDR</option>
+                <option>USD</option>
+                <option>EUR</option>
+              </select>
+            </div>
+          </label>
+          <label class="item item-input item-stacked-label"><span class="input-label">Nilai SC</span>
+            <input ng-model="user.sc_value" type="text" placeholder=""/>
+          </label>
+          <label class="item item-input item-stacked-label"><span class="input-label">Quantity</span>
+            <input ng-model="user.quantity" type="text" placeholder=""/>
+          </label>
+          <label class="item item-input item-stacked-label"><span class="input-label">Tanggal Create SC</span>
+            <input ng-model="user.created_date" type="text" placeholder=""/>
+          </label>
+          <label class="item item-input item-select">
+            <div class="input-label">Cost Center
+              <select ng-model="new_sc.cost_center">
+                <option>C63CU</option>
+                <option>010000</option>
+                <option>020000</option>
+                <option>030000</option>
+                <option>040000</option>
+                <option>050000</option>
+              </select>
+            </div>
+          </label>
+          <label class="item item-input item-stacked-label"><span class="input-label">GL Account</span>
+            <input ng-model="user.gl_account" type="text" placeholder=""/>
+          </label>
+          <label class="item item-input item-stacked-label"><span class="input-label">Business Area</span>
+            <input ng-model="user.business_area" type="text" placeholder=""/>
+          </label>
+          <label class="item item-input item-stacked-label"><span class="input-label">Vendor</span>
+            <input ng-model="user.vendor" type="text" placeholder=""/>
+          </label>
+          <div class="item">
+            <button ng-click="save()" class="button button-block button-positive">Save</button>
+          </div>
+        </div>
+      </form>
+    </ion-list>
+  </ion-content>
+</ion-view>

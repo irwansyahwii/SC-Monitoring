@@ -10,6 +10,9 @@ var MainForManagerController = (function () {
         this.$ionicHistory = $ionicHistory;
         this.$timeout = $timeout;
         this.$scope.current_user = User.current_user;
+        this.$scope.new_sc_clicked = function () {
+            RoutingService.showNewSCScreen();
+        };
         this.$scope.back_button_clicked = function () {
             _this.$log.debug("back_button_clicked called");
             // this.$log.debug(this.$ionicHistory.currentStateName());

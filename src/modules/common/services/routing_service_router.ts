@@ -77,6 +77,10 @@ class RoutingServiceRouter implements IRoutingService {
         this.routing_service.showTabRejectedDetailSC(sc);
     }
 
+    showNewSCScreen(){
+        this.routing_service.showNewSCScreen();
+    }
+
 }
 
 export = RoutingServiceRouter;

@@ -61,6 +61,9 @@ var RoutingService = (function () {
         this.$log.debug("showTabRejectedDetailSC called");
         this.$state.go("main_for_manager.rejected_show_detail_sc");
     };
+    RoutingService.prototype.showNewSCScreen = function () {
+        this.$state.go("main_for_admin.new_sc");
+    };
     return RoutingService;
 })();
 module.exports = RoutingService;

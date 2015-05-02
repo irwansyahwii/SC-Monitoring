@@ -89,6 +89,10 @@ class RoutingService implements IRoutingService {
         this.$state.go("main_for_manager.rejected_show_detail_sc");                        
     }
 
+    showNewSCScreen(){
+        
+    }
+
 }
 
 export = RoutingService;
